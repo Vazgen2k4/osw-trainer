@@ -1,0 +1,188 @@
+#################################################################
+# Krok 1: SKOS – řízené slovníky pro sloupce, které byly v datech
+# jen řetězce: KAT ("NP", "PR", …), IUCN ("IV", …), OP_TYP ("ZAK", …)
+#################################################################
+
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix kat:   <https://example.org/bivak/kategorie/> .
+@prefix iucn:  <https://example.org/bivak/iucn/> .
+@prefix optyp: <https://example.org/bivak/typ-op/> .
+@prefix mvcr:  <https://data.mvcr.gov.cz/zdroj/číselníky/kategorie-územní-ochrany/položky/> .
+
+#################################################################
+# 1. Kategorie zvláště chráněných území (sloupec KAT)
+#################################################################
+
+kat:schema a skos:ConceptScheme ;
+    skos:prefLabel "Kategorie zvláště chráněných území"@cs ,
+                   "Categories of specially protected areas"@en ;
+    dct:source <https://www.zakonyprolidi.cz/cs/1992-114> ;
+    skos:hasTopConcept kat:VZCHU , kat:MZCHU , kat:OP .
+
+# --- Skupiny kategorií: v datech nejsou ve sloupci KAT, ale v názvu souboru ---
+
+kat:VZCHU a skos:Concept ;
+    skos:inScheme kat:schema ;
+    skos:topConceptOf kat:schema ;
+    skos:prefLabel "Velkoplošné zvláště chráněné území"@cs ,
+                   "Large-scale specially protected area"@en ;
+    skos:altLabel "VZCHÚ"@cs ;
+    skos:notation "VZCHU" ;
+    skos:narrower kat:NP , kat:CHKO .
+
+kat:MZCHU a skos:Concept ;
+    skos:inScheme kat:schema ;
+    skos:topConceptOf kat:schema ;
+    skos:prefLabel "Maloplošné zvláště chráněné území"@cs ,
+                   "Small-scale specially protected area"@en ;
+    skos:altLabel "MZCHÚ"@cs ;
+    skos:notation "MZCHU" ;
+    skos:narrower kat:NPR , kat:PR , kat:NPP , kat:PP .
+
+# --- Kategorie (hodnoty sloupce KAT) ---
+
+kat:NP a skos:Concept ;
+    skos:inScheme kat:schema ;
+    skos:broader kat:VZCHU ;
+    skos:prefLabel "Národní park"@cs , "National park"@en ;
+    skos:altLabel "NP"@cs ;
+    skos:notation "NP" ;
+    skos:definition "Rozsáhlé území jedinečné v národním či mezinárodním měřítku, jehož značnou část zaujímají přirozené nebo lidskou činností málo ovlivněné ekosystémy (§ 15 zákona 114/1992 Sb.)."@cs ;
+    skos:exactMatch mvcr:národní-park ;
+    skos:closeMatch iucn:II .
+
+kat:CHKO a skos:Concept ;
+    skos:inScheme kat:schema ;
+    skos:broader kat:VZCHU ;
+    skos:prefLabel "Chráněná krajinná oblast"@cs , "Protected landscape area"@en ;
+    skos:altLabel "CHKO"@cs , "PLA"@en ;
+    skos:notation "CHKO" ;
+    skos:definition "Rozsáhlé území s harmonicky utvářenou krajinou, charakteristicky vyvinutým reliéfem a významným podílem přirozených ekosystémů (§ 25 zákona 114/1992 Sb.)."@cs ;
+    skos:exactMatch mvcr:chráněná-krajinná-oblast ;
+    skos:closeMatch iucn:V .
+
+kat:NPR a skos:Concept ;
+    skos:inScheme kat:schema ;
+    skos:broader kat:MZCHU ;
+    skos:prefLabel "Národní přírodní rezervace"@cs , "National nature reserve"@en ;
+    skos:altLabel "NPR"@cs ;
+    skos:notation "NPR" ;
+    skos:definition "Menší území mimořádných přírodních hodnot s ekosystémy významnými a jedinečnými v národním či mezinárodním měřítku (§ 28 zákona 114/1992 Sb.)."@cs ;
+    skos:exactMatch mvcr:národní-přírodní-rezervace .
+
+kat:PR a skos:Concept ;
+    skos:inScheme kat:schema ;
+    skos:broader kat:MZCHU ;
+    skos:prefLabel "Přírodní rezervace"@cs , "Nature reserve"@en ;
+    skos:altLabel "PR"@cs ;
+    skos:notation "PR" ;
+    skos:definition "Menší území soustředěných přírodních hodnot s ekosystémy typickými a významnými pro příslušnou geografickou oblast (§ 33 zákona 114/1992 Sb.)."@cs ;
+    skos:exactMatch mvcr:přírodní-rezervace .
+
+kat:NPP a skos:Concept ;
+    skos:inScheme kat:schema ;
+    skos:broader kat:MZCHU ;
+    skos:prefLabel "Národní přírodní památka"@cs , "National nature monument"@en ;
+    skos:altLabel "NPP"@cs ;
+    skos:notation "NPP" ;
+    skos:definition "Přírodní útvar menší rozlohy (geologický útvar, naleziště nerostů nebo vzácných druhů) s národním nebo mezinárodním významem (§ 35 zákona 114/1992 Sb.)."@cs ;
+    skos:exactMatch mvcr:národní-přírodní-památka .
+
+kat:PP a skos:Concept ;
+    skos:inScheme kat:schema ;
+    skos:broader kat:MZCHU ;
+    skos:prefLabel "Přírodní památka"@cs , "Nature monument"@en ;
+    skos:altLabel "PP"@cs ;
+    skos:notation "PP" ;
+    skos:definition "Přírodní útvar menší rozlohy (geologický útvar, naleziště nerostů nebo vzácných druhů) s regionálním významem (§ 36 zákona 114/1992 Sb.)."@cs ;
+    skos:exactMatch mvcr:přírodní-památka .
+
+# OP je ve stejném sloupci KAT, ale není to kategorie ZCHÚ – je to pásmo kolem NP.
+kat:OP a skos:Concept ;
+    skos:inScheme kat:schema ;
+    skos:topConceptOf kat:schema ;
+    skos:prefLabel "Ochranné pásmo národního parku"@cs , "National park protective zone"@en ;
+    skos:altLabel "OP"@cs ;
+    skos:notation "OP" ;
+    skos:scopeNote "Není zvláště chráněné území; v datech AOPK je ve sloupci KAT spolu s NP a CHKO."@cs .
+
+#################################################################
+# 2. Kategorie IUCN (sloupec IUCN)
+#################################################################
+
+iucn:schema a skos:ConceptScheme ;
+    skos:prefLabel "Kategorie chráněných území IUCN"@cs ,
+                   "IUCN protected area management categories"@en ;
+    dct:source <https://www.iucn.org/theme/protected-areas/about/protected-area-categories> ;
+    skos:hasTopConcept iucn:I , iucn:II , iucn:III , iucn:IV , iucn:V , iucn:VI .
+
+# Kategorie I se dělí na Ia a Ib – hierarchie, kterou řetězec "Ia" nevyjádří
+iucn:I a skos:Concept ;
+    skos:inScheme iucn:schema ; skos:topConceptOf iucn:schema ;
+    skos:notation "I" ;
+    skos:prefLabel "Přísně chráněné území"@cs , "Strict protection"@en ;
+    skos:narrower iucn:Ia , iucn:Ib .
+
+iucn:Ia a skos:Concept ;
+    skos:inScheme iucn:schema ; skos:broader iucn:I ;
+    skos:notation "Ia" ;
+    skos:prefLabel "Přísná přírodní rezervace"@cs , "Strict nature reserve"@en .
+
+iucn:Ib a skos:Concept ;
+    skos:inScheme iucn:schema ; skos:broader iucn:I ;
+    skos:notation "Ib" ;
+    skos:prefLabel "Území divočiny"@cs , "Wilderness area"@en .
+
+iucn:II a skos:Concept ;
+    skos:inScheme iucn:schema ; skos:topConceptOf iucn:schema ;
+    skos:notation "II" ;
+    skos:prefLabel "Národní park"@cs , "National park"@en .
+
+iucn:III a skos:Concept ;
+    skos:inScheme iucn:schema ; skos:topConceptOf iucn:schema ;
+    skos:notation "III" ;
+    skos:prefLabel "Přírodní památka nebo útvar"@cs , "Natural monument or feature"@en .
+
+iucn:IV a skos:Concept ;
+    skos:inScheme iucn:schema ; skos:topConceptOf iucn:schema ;
+    skos:notation "IV" ;
+    skos:prefLabel "Území pro péči o stanoviště a druhy"@cs , "Habitat/species management area"@en .
+
+iucn:V a skos:Concept ;
+    skos:inScheme iucn:schema ; skos:topConceptOf iucn:schema ;
+    skos:notation "V" ;
+    skos:prefLabel "Chráněná krajina"@cs , "Protected landscape/seascape"@en .
+
+iucn:VI a skos:Concept ;
+    skos:inScheme iucn:schema ; skos:topConceptOf iucn:schema ;
+    skos:notation "VI" ;
+    skos:prefLabel "Chráněné území s udržitelným využíváním zdrojů"@cs ,
+                   "Protected area with sustainable use of natural resources"@en .
+
+#################################################################
+# 3. Typ ochranného pásma MZCHÚ (sloupec OP_TYP)
+#################################################################
+
+optyp:schema a skos:ConceptScheme ;
+    skos:prefLabel "Typ ochranného pásma"@cs , "Type of protective zone"@en ;
+    skos:hasTopConcept optyp:ZAK , optyp:VYH , optyp:VNU .
+
+optyp:ZAK a skos:Concept ;
+    skos:inScheme optyp:schema ; skos:topConceptOf optyp:schema ;
+    skos:notation "ZAK" ;
+    skos:prefLabel "Ochranné pásmo ze zákona"@cs , "Statutory protective zone"@en ;
+    skos:definition "Ochranné pásmo nebylo vyhlášeno, platí pás 50 m od hranice území (§ 37 zákona 114/1992 Sb.)."@cs .
+
+optyp:VYH a skos:Concept ;
+    skos:inScheme optyp:schema ; skos:topConceptOf optyp:schema ;
+    skos:notation "VYH" ;
+    skos:prefLabel "Vyhlášené ochranné pásmo"@cs , "Declared protective zone"@en .
+
+# Pozor: význam kódu VNU v metadatech AOPK chybí – přesně ten problém,
+# který řeší skos:definition. Doplnit po ověření.
+optyp:VNU a skos:Concept ;
+    skos:inScheme optyp:schema ; skos:topConceptOf optyp:schema ;
+    skos:notation "VNU" ;
+    skos:prefLabel "VNU"@cs ;
+    skos:editorialNote "Význam kódu ověřit v metadatech AOPK ČR."@cs .

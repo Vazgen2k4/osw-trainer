@@ -1,0 +1,240 @@
+@prefix :     <https://example.org/bivak#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+#################################################################
+# 1. Model: classes
+#################################################################
+
+# --- Activities ---
+:OvernightStay a rdfs:Class ;
+    rdfs:label "Overnight stay"@en , "Přenocování"@cs .
+:Camping a rdfs:Class ;
+    rdfs:subClassOf :OvernightStay ;
+    rdfs:label "Camping"@en , "Táboření"@cs ;
+    rdfs:comment "Overnight stay using a tent, or including camp activities such as cooking or hygiene."@en .
+:Bivouacking a rdfs:Class ;
+    rdfs:subClassOf :OvernightStay ;
+    rdfs:label "Bivouacking"@en , "Bivakování"@cs ;
+    rdfs:comment "Overnight stay without a tent and without camp activities."@en .
+
+# --- Things done during a stay ---
+:Activity a rdfs:Class ;
+    rdfs:label "Activity"@en , "Činnost"@cs .
+:Sleeping a rdfs:Class ;
+    rdfs:subClassOf :Activity ;
+    rdfs:label "Sleeping"@en , "Spánek"@cs .
+:CampActivity a rdfs:Class ;
+    rdfs:subClassOf :Activity ;
+    rdfs:label "Camp activity"@en , "Táborová činnost"@cs .
+:FoodPreparation a rdfs:Class ;
+    rdfs:subClassOf :CampActivity ;
+    rdfs:label "Food preparation"@en , "Příprava jídla"@cs .
+:Hygiene a rdfs:Class ;
+    rdfs:subClassOf :CampActivity ;
+    rdfs:label "Hygiene"@en , "Hygiena"@cs .
+:MakingFire a rdfs:Class ;
+    rdfs:subClassOf :CampActivity ;
+    rdfs:label "Making fire"@en , "Rozdělávání ohně"@cs .
+
+# --- Shelters ---
+:Shelter a rdfs:Class ;
+    rdfs:label "Shelter"@en , "Přístřešek"@cs .
+:Tent a rdfs:Class ;
+    rdfs:subClassOf :Shelter ;
+    rdfs:label "Tent"@en , "Stan"@cs .
+:Tarp a rdfs:Class ;
+    rdfs:subClassOf :Shelter ;
+    rdfs:label "Tarp"@en , "Celta"@cs .
+:Hammock a rdfs:Class ;
+    rdfs:subClassOf :Shelter ;
+    rdfs:label "Hammock"@en , "Hamaka"@cs .
+:BivySack a rdfs:Class ;
+    rdfs:subClassOf :Shelter ;
+    rdfs:label "Bivy sack"@en , "Bivakovací vak"@cs .
+
+# --- Areas ---
+:Area a rdfs:Class ;
+    rdfs:label "Area"@en , "Území"@cs .
+:ProtectedArea a rdfs:Class ;
+    rdfs:subClassOf :Area ;
+    rdfs:label "Protected area"@en , "Chráněné území"@cs .
+:NationalPark a rdfs:Class ;
+    rdfs:subClassOf :ProtectedArea ;
+    rdfs:label "National park"@en , "Národní park"@cs .
+:ProtectedLandscapeArea a rdfs:Class ;
+    rdfs:subClassOf :ProtectedArea ;
+    rdfs:label "Protected landscape area"@en , "Chráněná krajinná oblast"@cs .
+:NationalNatureReserve a rdfs:Class ;
+    rdfs:subClassOf :ProtectedArea ;
+    rdfs:label "National nature reserve"@en , "Národní přírodní rezervace"@cs .
+:Forest a rdfs:Class ;
+    rdfs:subClassOf :Area ;
+    rdfs:label "Forest"@en , "Les"@cs .
+
+:Spot a rdfs:Class ;
+    rdfs:label "Spot"@en , "Místo"@cs .
+
+# --- Rules and their sources ---
+:Restriction a rdfs:Class ;
+    rdfs:label "Restriction"@en , "Omezení"@cs .
+:LegalSource a rdfs:Class ;
+    rdfs:label "Legal source"@en , "Právní předpis"@cs .
+
+#################################################################
+# 2. Model: properties
+#################################################################
+
+:liesWithin a rdf:Property , owl:TransitiveProperty ;
+    rdfs:label "lies within"@en , "leží v"@cs ;
+    rdfs:range :Area .
+:prohibits a rdf:Property ;
+    rdfs:label "prohibits"@en , "zakazuje"@cs ;
+    rdfs:domain :Restriction .
+:appliesToAreaType a rdf:Property ;
+    rdfs:label "applies to area type"@en , "platí pro typ území"@cs ;
+    rdfs:domain :Restriction .
+:appliesToArea a rdf:Property ;
+    rdfs:label "applies to area"@en , "platí pro území"@cs ;
+    rdfs:domain :Restriction ;
+    rdfs:range :Area .
+:definedIn a rdf:Property ;
+    rdfs:label "defined in"@en , "stanoveno v"@cs ;
+    rdfs:domain :Restriction ;
+    rdfs:range :LegalSource .
+:atSpot a rdf:Property ;
+    rdfs:label "at spot"@en , "na místě"@cs ;
+    rdfs:range :Spot .
+:usesShelter a rdf:Property ;
+    rdfs:label "uses shelter"@en , "používá přístřešek"@cs ;
+    rdfs:range :Shelter .
+:includesActivity a rdf:Property ;
+    rdfs:label "includes activity"@en , "zahrnuje činnost"@cs ;
+    rdfs:range :Activity .
+
+#################################################################
+# 3. Legal sources and restrictions
+#################################################################
+
+:Act114_1992 a :LegalSource ;
+    rdfs:label "Zákon č. 114/1992 Sb., o ochraně přírody a krajiny"@cs ,
+               "Act No. 114/1992 Coll., on Nature and Landscape Protection"@en .
+:Act289_1995 a :LegalSource ;
+    rdfs:label "Zákon č. 289/1995 Sb., lesní zákon"@cs ,
+               "Act No. 289/1995 Coll., Forest Act"@en .
+:VisitRules_CS a :LegalSource ;
+    rdfs:label "Návštěvní řád NP České Švýcarsko"@cs ,
+               "Visitor rules of the Bohemian Switzerland National Park"@en .
+
+:CampingBan_Protected a :Restriction ;
+    rdfs:label "Zákaz táboření v NP, CHKO a NPR"@cs ,
+               "Camping ban in NP, CHKO and NPR"@en ;
+    :prohibits :Camping ;
+    :appliesToAreaType :NationalPark , :ProtectedLandscapeArea , :NationalNatureReserve ;
+    :definedIn :Act114_1992 .
+
+:CampingBan_Forest a :Restriction ;
+    rdfs:label "Zákaz táboření v lese"@cs ,
+               "Camping ban in forests"@en ;
+    :prohibits :Camping ;
+    :appliesToAreaType :Forest ;
+    :definedIn :Act289_1995 .
+
+:OvernightBan_CS a :Restriction ;
+    rdfs:label "Zákaz nocování v NP České Švýcarsko"@cs ,
+               "Overnight stay ban in Bohemian Switzerland NP"@en ;
+    :prohibits :OvernightStay ;
+    :appliesToArea :NP_CeskeSvycarsko ;
+    :definedIn :VisitRules_CS .
+
+#################################################################
+# 4. Areas
+#################################################################
+
+:NP_CeskeSvycarsko a :NationalPark ;
+    rdfs:label "Národní park České Švýcarsko"@cs , "Bohemian Switzerland National Park"@en .
+:NP_Sumava a :NationalPark ;
+    rdfs:label "Národní park Šumava"@cs , "Šumava National Park"@en .
+:NP_Krkonose a :NationalPark ;
+    rdfs:label "Krkonošský národní park"@cs , "Krkonoše National Park"@en .
+:NP_Podyji a :NationalPark ;
+    rdfs:label "Národní park Podyjí"@cs , "Podyjí National Park"@en .
+
+:CHKO_Kokorinsko a :ProtectedLandscapeArea ;
+    rdfs:label "CHKO Kokořínsko – Máchův kraj"@cs .
+:CHKO_LabskePiskovce a :ProtectedLandscapeArea ;
+    rdfs:label "CHKO Labské pískovce"@cs .
+:CHKO_JizerskeHory a :ProtectedLandscapeArea ;
+    rdfs:label "CHKO Jizerské hory"@cs .
+
+:NPR_KokorinskyDul a :NationalNatureReserve ;
+    rdfs:label "NPR Kokořínský důl"@cs ;
+    :liesWithin :CHKO_Kokorinsko .
+
+:Forest_JizerskeHory a :Forest ;
+    rdfs:label "Les v Jizerských horách"@cs , "Forest in the Jizera Mountains"@en ;
+    :liesWithin :CHKO_JizerskeHory .
+:Forest_Pelhrimov a :Forest ;
+    rdfs:label "Les u Pelhřimova"@cs , "Forest near Pelhřimov"@en .
+
+#################################################################
+# 5. Spots (annotated data)
+#################################################################
+
+:SpotA a :Spot ;
+    rdfs:label "Skalní převis u Pravčické brány"@cs , "Rock overhang near Pravčická brána"@en ;
+    :liesWithin :NP_CeskeSvycarsko .
+
+:SpotB a :Spot ;
+    rdfs:label "Louka v Kokořínském dole"@cs , "Meadow in Kokořínský důl"@en ;
+    :liesWithin :NPR_KokorinskyDul .          # CHKO follows by transitivity
+
+:SpotC a :Spot ;
+    rdfs:label "Paseka v Jizerských horách"@cs , "Clearing in the Jizera Mountains"@en ;
+    :liesWithin :Forest_JizerskeHory .        # CHKO follows by transitivity
+
+:SpotD a :Spot ;
+    rdfs:label "Pole u Kutné Hory"@cs , "Field near Kutná Hora"@en .
+
+:SpotE a :Spot ;
+    rdfs:label "Mýtina u Pelhřimova"@cs , "Clearing near Pelhřimov"@en ;
+    :liesWithin :Forest_Pelhrimov .
+
+:SpotF a :Spot ;
+    rdfs:label "Louka na Kokořínsku mimo NPR"@cs , "Meadow in Kokořínsko outside the NPR"@en ;
+    :liesWithin :CHKO_Kokorinsko .
+
+#################################################################
+# 6. Planned stays (described, not classified)
+#################################################################
+
+:Stay1 rdfs:label "Celta pod převisem"@cs , "Tarp under the overhang"@en ;
+    :atSpot :SpotA ;
+    :usesShelter [ a :Tarp ] ;
+    :includesActivity [ a :Sleeping ] .
+
+:Stay2 rdfs:label "Jen spacák v Kokořínském dole"@cs , "Just a sleeping bag in Kokořínský důl"@en ;
+    :atSpot :SpotB ;
+    :usesShelter [ a :BivySack ] ;
+    :includesActivity [ a :Sleeping ] .
+
+:Stay3 rdfs:label "Celta a vaření v Kokořínském dole"@cs , "Tarp and cooking in Kokořínský důl"@en ;
+    :atSpot :SpotB ;
+    :usesShelter [ a :Tarp ] ;
+    :includesActivity [ a :Sleeping ] , [ a :FoodPreparation ] .
+
+:Stay4 rdfs:label "Hamaka v Jizerkách"@cs , "Hammock in the Jizera Mountains"@en ;
+    :atSpot :SpotC ;
+    :usesShelter [ a :Hammock ] ;
+    :includesActivity [ a :Sleeping ] .
+
+:Stay5 rdfs:label "Stan na poli"@cs , "Tent in a field"@en ;
+    :atSpot :SpotD ;
+    :usesShelter [ a :Tent ] ;
+    :includesActivity [ a :Sleeping ] , [ a :FoodPreparation ] , [ a :Hygiene ] .
+
+:Stay6 rdfs:label "Stan v lese u Pelhřimova"@cs , "Tent in the forest near Pelhřimov"@en ;
+    :atSpot :SpotE ;
+    :usesShelter [ a :Tent ] ;
+    :includesActivity [ a :Sleeping ] .

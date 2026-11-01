@@ -1,0 +1,124 @@
+/* ---------------------------------------------------------------- theme tokens: dark is the default */
+:root{color-scheme:dark;--bg:#14171d;--panel:#1c2028;--ink:#e6e9ef;--mute:#99a2b2;--line:#2c323d;--acc:#7da2ff;--acc-ink:#0d1220;--ok:#5ad08f;--okbg:#14301f;--bad:#ff8a80;--badbg:#3a1d1b;--code:#252a34;--mk:#5b4b00;--keybg:#1f2a44;--enbg:#10302c;--en:#6fe0cf;--enbd:#1f5e55;--shadow:rgba(0,0,0,.45);--c-k:#d9a0f5;--c-v:#7cc0ff;--c-s:#8ed48e;--c-i:#e6c07b;--c-c:#7d8594;--c-p:#ffa066;--c-n:#e6b36b}
+:root[data-theme="light"]{color-scheme:light;--bg:#fafaf8;--panel:#fff;--ink:#1d2330;--mute:#66707f;--line:#dfe2e8;--acc:#2456d6;--acc-ink:#fff;--ok:#13804a;--okbg:#e4f5ec;--bad:#b3261e;--badbg:#fdeceb;--code:#f1f2f5;--mk:#fff1a8;--keybg:#eef3ff;--enbg:#e7f6f3;--en:#0b6b5f;--enbd:#a8ddd4;--shadow:rgba(0,0,0,.25);--c-k:#a626a4;--c-v:#0b6bcb;--c-s:#2a7a2a;--c-i:#986801;--c-c:#8a8f99;--c-p:#c2410c;--c-n:#b45309}
+
+/* ---------------------------------------------------------------- layout */
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;display:flex;min-height:100vh}
+main{flex:1;max-width:900px;padding:48px 28px 60px;margin:0 auto;min-width:0}
+button,select,input{font:inherit;padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+button{cursor:pointer}
+/* one custom chevron for every <select>: the native arrows differ per browser and theme */
+select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:30px;
+  background:var(--panel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23889' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 11px center}
+select:hover{background-color:var(--code)}
+select:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:-1px}
+button.p{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+button:disabled{opacity:.45;cursor:default}
+.on{background:var(--acc)!important;border-color:var(--acc)!important;color:var(--acc-ink)!important}
+.small{font-size:13px;color:var(--mute)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}
+
+/* top controls */
+.tools{position:fixed;top:10px;left:10px;z-index:6;display:flex;gap:6px;align-items:center}
+.tools button,.tools select{height:32px;padding:0 10px;font-size:14px;line-height:1;border-radius:8px;display:inline-flex;align-items:center}
+.tools button:hover,.tools select:hover{background:var(--code)}
+.tools select{max-width:150px;text-overflow:ellipsis}
+.tools #theme{width:32px;justify-content:center;padding:0;font-size:15px}
+#tg2{position:fixed;top:10px;right:10px;z-index:6;padding:5px 10px}
+
+/* ---------------------------------------------------------------- lesson menu */
+nav{width:290px;flex:none;background:var(--panel);border-right:1px solid var(--line);padding:50px 10px 14px;overflow:auto;height:100vh;position:sticky;top:0}
+body.nohide nav{display:none}
+nav h1{font-size:16px;margin:0 6px 4px}
+nav .bar{height:6px;background:var(--line);border-radius:3px;margin:6px 6px 12px}
+nav .bar i{display:block;height:100%;background:var(--acc);border-radius:3px}
+nav h2{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);margin:14px 6px 4px}
+nav a{display:flex;gap:8px;padding:5px 8px;border-radius:6px;cursor:pointer;color:var(--ink);text-decoration:none;font-size:14px}
+nav a:hover{background:var(--code)}
+nav a.cur{background:var(--acc);color:var(--acc-ink)}
+nav a .m{width:16px;flex:none;text-align:center}
+nav .ntabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 6px 8px}
+nav .ntabs button{display:flex;justify-content:space-between;align-items:center;padding:5px 8px;font-size:13px}
+nav .ntabs button span{font-size:11px;opacity:.7;margin-left:6px}
+
+/* ---------------------------------------------------------------- lesson */
+h2.t{margin:0 0 4px;font-size:22px}
+.part{color:var(--mute);font-size:13px;margin-bottom:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.card h3{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute)}
+.card h4{margin:14px 0 4px;font-size:15px}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font:13px ui-monospace,Menlo,monospace}
+pre{background:var(--code);padding:10px 12px;border-radius:8px;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;font:13px/1.5 ui-monospace,Menlo,monospace;margin:8px 0}
+pre code{padding:0;background:none}
+mark{background:var(--mk);color:inherit;padding:0 3px;border-radius:3px}
+.key{border-left:4px solid var(--acc);background:var(--keybg);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.key b{color:var(--acc)}
+.en{display:inline-block;background:var(--enbg);color:var(--en);border:1px solid var(--enbd);border-radius:12px;padding:0 8px;margin:0 1px;font:600 12.5px/1.6 ui-monospace,Menlo,monospace;white-space:nowrap}
+.terms{display:flex;flex-wrap:wrap;gap:6px 14px}
+.terms div{display:flex;align-items:center;gap:6px}
+.terms span.r{color:var(--mute);font-size:13px}
+.task-en{border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
+.task-en .lab{font-size:12px;font-weight:700;color:var(--en);letter-spacing:.05em}
+table{border-collapse:collapse}
+td,th{border:1px solid var(--line);padding:3px 8px;font-size:13px;text-align:left}
+label.inf{margin-left:auto;font-size:14px}
+.verdict{padding:10px 14px;border-radius:8px;margin:10px 0;font-weight:500}
+.verdict.ok{background:var(--okbg);color:var(--ok)}
+.verdict.bad{background:var(--badbg);color:var(--bad)}
+.verdict ul{margin:6px 0 0;padding-left:18px;font-weight:400}
+.res{overflow:auto;max-height:340px;margin:8px 0}
+.res td{font:13px ui-monospace,Menlo,monospace}
+.hint{border-left:3px solid var(--acc);padding:4px 10px;margin:6px 0;background:var(--code);border-radius:0 6px 6px 0}
+.sol{display:none}
+.banner{background:var(--acc);color:var(--acc-ink);border-radius:10px;padding:16px 18px;margin:16px 0}
+.banner button{margin-top:8px}
+
+/* syntax colours */
+.tk-k{color:var(--c-k);font-weight:600}.tk-v{color:var(--c-v)}.tk-s{color:var(--c-s)}.tk-i{color:var(--c-i)}.tk-c{color:var(--c-c);font-style:italic}.tk-p{color:var(--c-p)}.tk-n{color:var(--c-n)}
+
+/* editor: a transparent textarea over a highlighted <pre> */
+.ed{position:relative;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.ed:focus-within{outline:2px solid var(--acc)}
+.ed::before{content:"";position:absolute;left:41px;top:0;bottom:0;border-left:1px solid var(--line)}
+.ed pre,.ed textarea{margin:0;padding:10px 10px 10px 50px;font:14px/1.5 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;tab-size:2;letter-spacing:0;border:0;border-radius:8px}
+.ed pre{background:transparent;min-height:230px;pointer-events:none;counter-reset:ln}
+.ed .L{counter-increment:ln;position:relative}
+.ed .L::before{content:counter(ln);position:absolute;left:-42px;width:30px;text-align:right;color:var(--c-c);user-select:none}
+.ed textarea{position:absolute;inset:0;width:100%;height:100%;background:transparent;color:transparent;caret-color:var(--ink);resize:none;overflow:hidden;outline:none}
+
+/* ---------------------------------------------------------------- side panel */
+aside{width:340px;flex:none;background:var(--panel);border-left:1px solid var(--line);padding:50px 12px 20px;overflow:auto;height:100vh;position:sticky;top:0;font-size:13px}
+body.noside aside{display:none}
+aside h2{font-size:15px;margin:0 0 2px}
+aside h3{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);margin:14px 0 4px}
+aside .sub{color:var(--mute);margin-bottom:10px}
+aside .pf{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:8px 0}
+aside .pf .nm{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+aside .pf .nm b{font:700 14px ui-monospace,Menlo,monospace}
+aside .pf .ds{color:var(--mute);font-size:12.5px;margin:2px 0 4px}
+aside .ln{display:flex;gap:6px;align-items:flex-start;margin:2px 0}
+aside .ln pre{margin:0;padding:4px 6px;font-size:11.5px;flex:1}
+aside .ln .t{font-size:10.5px;font-weight:700;color:var(--en);width:44px;flex:none;padding-top:5px}
+aside .cp{padding:2px 7px;font-size:11px;flex:none}
+aside .tabs{display:flex;gap:6px;margin-bottom:10px}
+aside .tabs button{flex:1;padding:4px}
+aside .tr{margin:3px 0}
+aside .ex{color:var(--mute);font-size:12px;margin:1px 0 4px;overflow-wrap:anywhere}
+aside .r{color:var(--mute)}
+@media(max-width:1250px){aside{position:fixed;right:0;top:0;z-index:5;box-shadow:-6px 0 24px var(--shadow)}}
+@media(max-width:760px){body{flex-direction:column}nav{width:100%;height:auto;position:static;max-height:220px}}
+
+/* ---------------------------------------------------------------- language dialog */
+dialog{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:0;width:min(620px,calc(100vw - 32px));box-shadow:0 12px 40px var(--shadow)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog .dlg{padding:18px 20px}
+dialog h2{margin:0 0 6px;font-size:18px}
+dialog h3{margin:18px 0 6px;font-size:14px}
+dialog label{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--mute);flex:1;min-width:140px}
+dialog label input,dialog label select{color:var(--ink);height:36px;padding-top:0;padding-bottom:0;padding-left:10px;font-size:14px}
+dialog .langs{list-style:none;padding:0;margin:0}
+dialog .langs li{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}
+dialog .langs li span.small{margin-right:auto}
+dialog .report{margin-top:10px}
+dialog .report ul{margin:6px 0 0;padding-left:18px;font-weight:400;font-size:13px}

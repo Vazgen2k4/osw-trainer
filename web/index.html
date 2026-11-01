@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSW Trainer</title>
+<script>
+  // applied before the first paint so a light-theme user never sees a dark flash (and vice versa)
+  try { if (JSON.parse(localStorage.getItem('osw_theme')) === 'light') document.documentElement.dataset.theme = 'light' } catch (e) {}
+</script>
+<link rel="stylesheet" href="css/app.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<div class="tools">
+  <button id="tg" data-action="toggle-nav"></button>
+  <select id="lang" aria-label="Language"></select>
+  <button id="theme" data-action="toggle-theme"></button>
+</div>
+<nav id="nav"></nav>
+<main id="main"></main>
+<button id="tg2" data-action="toggle-side"></button>
+<aside id="side"></aside>
+<dialog id="lang-dialog"></dialog>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# Optional: the RML engine used to check the RML lessons (pulls in pandas and duckdb, ~100 MB).
+morph-kgc>=2.10,<3

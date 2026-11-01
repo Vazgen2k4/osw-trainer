@@ -1,0 +1,1014 @@
+@base <https://www.theuiaa.org/4000-alps/> .
+@prefix uiaa: <https://www.theuiaa.org/4000-alps/summit/> .
+@prefix uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> .
+@prefix xsd: <https://www.w3.org/2001/XMLSchema#> .
+@prefix uiaa-range: <https://www.theuiaa.org/4000-alps/range/> .
+@prefix uiaa-saddle: <https://www.theuiaa.org/4000-alps/prominent-saddle/> .
+
+uiaa:Mont-Blanc a uiaa-s:summit;
+  uiaa-s:elevation "4809"^^xsd:integer;
+  uiaa-s:firstAscentYear "8 August 1786"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "4697";
+  uiaa-s:isolation "2812";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber "Jacques Balmat"^^xsd:string, " Michel-Gabriel Paccard"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "near Lake Kubenskoye";
+  uiaa-s:isolatedTo uiaa:Elbrus;
+  uiaa-s:peakName "Mont Blanc" .
+
+uiaa:Mont-Blanc-de-Courmayeur a uiaa-s:summit;
+  uiaa-s:elevation "4748"^^xsd:integer;
+  uiaa-s:firstAscentYear "18 August 1822"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "18";
+  uiaa-s:isolation "0.6";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " F. Clissold"^^xsd:string, " J. M. Couttet and five guides"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col Major";
+  uiaa-s:isolatedTo uiaa:Mont-Blanc;
+  uiaa-s:peakName "Mont Blanc de Courmayeur" .
+
+uiaa:Dufourspitze a uiaa-s:summit;
+  uiaa-s:elevation "4634"^^xsd:integer;
+  uiaa-s:firstAscentYear "1 August 1855"^^xsd:date;
+  uiaa-s:country "Switzerland and Italy";
+  uiaa-s:prominence "2165";
+  uiaa-s:isolation "78.3";
+  uiaa-s:inRange uiaa-range:Monte-Rosa-Massif;
+  uiaa-s:firstClimber " Charles Hudson and 7 companions"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Grosser Sankt Bernhard";
+  uiaa-s:isolatedTo uiaa:Mont-Blanc-de-Courmayeur;
+  uiaa-s:peakName "Dufourspitze" .
+
+uiaa:Nordend a uiaa-s:summit;
+  uiaa-s:elevation "4608"^^xsd:integer;
+  uiaa-s:firstAscentYear "26 August 1861"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "89";
+  uiaa-s:isolation "0.6";
+  uiaa-s:inRange uiaa-range:Monte-Rosa-Massif;
+  uiaa-s:firstClimber " Edward N. Buxton"^^xsd:string, " T.F. Buxton"^^xsd:string, " John J. Cowell"^^xsd:string,
+    " Michel-Clément Payot"^^xsd:string, " Binder"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Silbersattel";
+  uiaa-s:isolatedTo uiaa:Grenzgipfel;
+  uiaa-s:peakName "Nordend" .
+
+uiaa:Zumsteinspitze a uiaa-s:summit;
+  uiaa-s:elevation "4563"^^xsd:integer;
+  uiaa-s:firstAscentYear "1 August 1820"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "112";
+  uiaa-s:isolation "0.5";
+  uiaa-s:inRange uiaa-range:Monte-Rosa-Massif;
+  uiaa-s:firstClimber " Joseph Zumstein"^^xsd:string, " Joseph Vincent and Johann Niklaus Vincent and others"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Grenzsattel";
+  uiaa-s:isolatedTo uiaa:Grenzgipfel;
+  uiaa-s:peakName "Zumsteinspitze" .
+
+uiaa:Signalkuppe a uiaa-s:summit;
+  uiaa-s:elevation "4554"^^xsd:integer;
+  uiaa-s:firstAscentYear "9 August 1842"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "98";
+  uiaa-s:isolation "0.7";
+  uiaa-s:inRange uiaa-range:Monte-Rosa-Massif;
+  uiaa-s:firstClimber " Giovanni Gnifetti and 7 companions"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Colle Gnifetti";
+  uiaa-s:isolatedTo uiaa:Zumsteinspitze;
+  uiaa-s:peakName "Signalkuppe" .
+
+uiaa:Dom a uiaa-s:summit;
+  uiaa-s:elevation "4546"^^xsd:integer;
+  uiaa-s:firstAscentYear "11 September 1858"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "1057";
+  uiaa-s:isolation "16.9";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " John Llewelyn Davies"^^xsd:string, " Johann Zumtaugwald"^^xsd:string,
+    " Johann Kronig"^^xsd:string, " Hieronymous Brantschen"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Neues Weisstor";
+  uiaa-s:isolatedTo uiaa:Nordend;
+  uiaa-s:peakName "Dom" .
+
+uiaa:Lyskamm-Eastern-Summit a uiaa-s:summit;
+  uiaa-s:elevation "4532"^^xsd:integer;
+  uiaa-s:firstAscentYear "19 August 1861"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "379";
+  uiaa-s:isolation "2.9";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " by 14 mountaineers"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Lisjoch";
+  uiaa-s:isolatedTo uiaa:Zumsteinspitze;
+  uiaa-s:peakName "Lyskamm (Eastern Summit)" .
+
+uiaa:Weisshorn a uiaa-s:summit;
+  uiaa-s:elevation "4505"^^xsd:integer;
+  uiaa-s:firstAscentYear "19 August 1861"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "1234";
+  uiaa-s:isolation "11.1";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " John Tyndall"^^xsd:string, " Johann Joseph Brennen"^^xsd:string,
+    " Ulrich Wenger"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Furggjoch";
+  uiaa-s:isolatedTo uiaa:Dom;
+  uiaa-s:peakName "Weisshorn" .
+
+uiaa:Täschhorn a uiaa-s:summit;
+  uiaa-s:elevation "4491"^^xsd:integer;
+  uiaa-s:firstAscentYear "30 July 1862"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "213";
+  uiaa-s:isolation "1.2";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " John Llewelyn Davies"^^xsd:string, " J.W. Hayward"^^xsd:string,
+    " Peter-Josef Summermatter"^^xsd:string, " Stefan"^^xsd:string, " Johann Zumtaugwald"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Domjoch";
+  uiaa-s:isolatedTo uiaa:Dom;
+  uiaa-s:peakName "Täschhorn" .
+
+uiaa:Lyskamm-Western-Summit a uiaa-s:summit;
+  uiaa-s:elevation "4479"^^xsd:integer;
+  uiaa-s:firstAscentYear "19 August 1861"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "61";
+  uiaa-s:isolation "1.1";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " William E. Hall and 13 companions"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Eastern Summit";
+  uiaa-s:isolatedTo uiaa:Lyskamm-Eastern-Summit;
+  uiaa-s:peakName "Lyskamm (Western Summit)" .
+
+uiaa:Matterhorn a uiaa-s:summit;
+  uiaa-s:elevation "4478"^^xsd:integer;
+  uiaa-s:firstAscentYear "14 July 1865"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "1043";
+  uiaa-s:isolation "13.9";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Croz"^^xsd:string, " Taugwalder"^^xsd:string, " Whymper"^^xsd:string,
+    " Hudson"^^xsd:string, " Douglas and Hadow"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col Durand";
+  uiaa-s:isolatedTo uiaa:Lyskamm-Western-Summit;
+  uiaa-s:peakName "Matterhorn" .
+
+uiaa:Picco-Luigi-Amedeo a uiaa-s:summit;
+  uiaa-s:elevation "4469"^^xsd:integer;
+  uiaa-s:firstAscentYear "20 July 1901"^^xsd:date;
+  uiaa-s:country "Italy";
+  uiaa-s:prominence "39";
+  uiaa-s:isolation "0.7";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " G.B. and G.F. Gugliermina"^^xsd:string, " Joseph Brocherel"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to Mont Blanc de Courmayeur";
+  uiaa-s:isolatedTo uiaa:Mont-Blanc-de-Courmayeur;
+  uiaa-s:peakName "Picco Luigi Amedeo" .
+
+uiaa:Mont-Maudit a uiaa-s:summit;
+  uiaa-s:elevation "4465"^^xsd:integer;
+  uiaa-s:firstAscentYear "12 September 1878"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "162";
+  uiaa-s:isolation "1.9";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Henry S. King"^^xsd:string, " William E. Davidson"^^xsd:string,
+    " Johann Jaun"^^xsd:string, " Johann von Bergen"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col de la Brenva";
+  uiaa-s:isolatedTo uiaa:Mont-Blanc;
+  uiaa-s:peakName "Mont Maudit" .
+
+uiaa:Parrotspitze a uiaa-s:summit;
+  uiaa-s:elevation "4434"^^xsd:integer;
+  uiaa-s:firstAscentYear "16 August 1863"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "134";
+  uiaa-s:isolation "0.9";
+  uiaa-s:inRange uiaa-range:Monte-Rosa-Massif;
+  uiaa-s:firstClimber " Florence Crauford Grove"^^xsd:string, " Melchior Anderegg and 4 companions"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Seserjoch";
+  uiaa-s:isolatedTo uiaa:Signalkuppe;
+  uiaa-s:peakName "Parrotspitze" .
+
+uiaa:Dent-Blanche a uiaa-s:summit;
+  uiaa-s:elevation "4357"^^xsd:integer;
+  uiaa-s:firstAscentYear "18 July 1862"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "916";
+  uiaa-s:isolation "7.4";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Thomas S. Kennedy"^^xsd:string, " William and C. Wigram mit Jean-Baptiste Croz"^^xsd:string,
+    " Johann Kronig"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Wandfluejoch";
+  uiaa-s:isolatedTo uiaa:Matterhorn;
+  uiaa-s:peakName "Dent Blanche" .
+
+uiaa:Ludwigshöhe a uiaa-s:summit;
+  uiaa-s:elevation "4341"^^xsd:integer;
+  uiaa-s:firstAscentYear "25 August 1822"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "57";
+  uiaa-s:isolation "0.7";
+  uiaa-s:inRange uiaa-range:Monte-Rosa-Massif;
+  uiaa-s:firstClimber " Ludwig von Welden and companions"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Fiodejoch";
+  uiaa-s:isolatedTo uiaa:Parrotspitze;
+  uiaa-s:peakName "Ludwigshöhe" .
+
+uiaa:Nadelhorn a uiaa-s:summit;
+  uiaa-s:elevation "4327"^^xsd:integer;
+  uiaa-s:firstAscentYear "16 September 1858"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "207";
+  uiaa-s:isolation "1.7";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " Franz Andenmatten"^^xsd:string, " Baptiste Epiney"^^xsd:string,
+    " Aloys Supersaxo"^^xsd:string, " Joseph Zimmermann"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Lenzjoch";
+  uiaa-s:isolatedTo uiaa:Dom;
+  uiaa-s:peakName "Nadelhorn" .
+
+uiaa:Schwarzhorn-Corno-Nero a uiaa-s:summit;
+  uiaa-s:elevation "4321"^^xsd:integer;
+  uiaa-s:firstAscentYear "18 August 1873"^^xsd:date;
+  uiaa-s:country "Italy";
+  uiaa-s:prominence "42";
+  uiaa-s:isolation "0.3";
+  uiaa-s:inRange uiaa-range:Monte-Rosa-Massif;
+  uiaa-s:firstClimber " Marco Maglionini"^^xsd:string, " Albert de Rothschild"^^xsd:string,
+    " Eduard Cupelin mit Peter and Nikolaus Knubel"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "col with the Ludwigshöhe";
+  uiaa-s:isolatedTo uiaa:Ludwigshöhe;
+  uiaa-s:peakName "Schwarzhorn (Corno Nero)" .
+
+uiaa:Combin-de-Grafeneire a uiaa-s:summit;
+  uiaa-s:elevation "4309"^^xsd:integer;
+  uiaa-s:firstAscentYear "20 July 1857"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "1512";
+  uiaa-s:isolation "26.5";
+  uiaa-s:inRange uiaa-range:Grand-Combin;
+  uiaa-s:firstClimber " Jouvence Bruchez"^^xsd:string, " Benjamin"^^xsd:string, " Maurice Felley"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Fenêtre de Durand";
+  uiaa-s:isolatedTo uiaa:Dent-Blanche;
+  uiaa-s:peakName "Combin de Grafeneire" .
+
+uiaa:Dôme-du-Goûter a uiaa-s:summit;
+  uiaa-s:elevation "4304"^^xsd:integer;
+  uiaa-s:firstAscentYear "17 September 1784"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "68";
+  uiaa-s:isolation "2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Jean-Marie Couttet"^^xsd:string, " François Cuidet"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col du Dôme";
+  uiaa-s:isolatedTo uiaa:Mont-Blanc;
+  uiaa-s:peakName "Dôme du Goûter" .
+
+uiaa:Lenzspitze a uiaa-s:summit;
+  uiaa-s:elevation "4293"^^xsd:integer;
+  uiaa-s:firstAscentYear "1870"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "86";
+  uiaa-s:isolation "0.5";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " Clinton Thomas Dent"^^xsd:string, " Alexander and Franz Burgener"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Nadeljoch";
+  uiaa-s:isolatedTo uiaa:Nadelhorn;
+  uiaa-s:peakName "Lenzspitze" .
+
+uiaa:Finsteraarhorn a uiaa-s:summit;
+  uiaa-s:elevation "4274"^^xsd:integer;
+  uiaa-s:firstAscentYear "16 August 1812"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "2279";
+  uiaa-s:isolation "51.7";
+  uiaa-s:inRange uiaa-range:Bernese-Alps;
+  uiaa-s:firstClimber " Arnold Abbühl"^^xsd:string, " Joseph Bortis"^^xsd:string, " Alois Volker"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "west of the Simplon Pass";
+  uiaa-s:isolatedTo uiaa:Nadelhorn;
+  uiaa-s:peakName "Finsteraarhorn" .
+
+uiaa:Mont-Blanc-du-Tacul a uiaa-s:summit;
+  uiaa-s:elevation "4248"^^xsd:integer;
+  uiaa-s:firstAscentYear "31 July 1855"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "219";
+  uiaa-s:isolation "1.4";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " J-M Chabot"^^xsd:string, " P-J Mochet"^^xsd:string, " J-M Perrod and James H. Ramsay"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col Maudit";
+  uiaa-s:isolatedTo uiaa:Mont-Maudit;
+  uiaa-s:peakName "Mont Blanc du Tacul" .
+
+uiaa:Grand-Pilier-dAngle a uiaa-s:summit;
+  uiaa-s:elevation "4243"^^xsd:integer;
+  uiaa-s:firstAscentYear "3 August 1957"^^xsd:date;
+  uiaa-s:country "Italy";
+  uiaa-s:prominence "35";
+  uiaa-s:isolation "0.7";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Walter Bonatti"^^xsd:string, " Toni Gobbi"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Mont Blanc de Courmayeur";
+  uiaa-s:isolatedTo uiaa:Mont-Blanc-de-Courmayeur;
+  uiaa-s:peakName "Grand Pilier d’Angle" .
+
+uiaa:Stecknadelhorn a uiaa-s:summit;
+  uiaa-s:elevation "4240"^^xsd:integer;
+  uiaa-s:firstAscentYear "8 August 1887"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "27";
+  uiaa-s:isolation "0.5";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " Oscar Eckenstein"^^xsd:string, " Matthias Zurbriggen"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Stecknadeljoch";
+  uiaa-s:isolatedTo uiaa:Nadelhorn;
+  uiaa-s:peakName "Stecknadelhorn" .
+
+uiaa:Castor a uiaa-s:summit;
+  uiaa-s:elevation "4225"^^xsd:integer;
+  uiaa-s:firstAscentYear "23 August 1861"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "156";
+  uiaa-s:isolation "2.4";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " William Mathews"^^xsd:string, " F.W. Jacomb"^^xsd:string, " Michel Croz"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Felikjoch";
+  uiaa-s:isolatedTo uiaa:Lyskamm-Western-Summit;
+  uiaa-s:peakName "Castor" .
+
+uiaa:Zinalrothorn a uiaa-s:summit;
+  uiaa-s:elevation "4221"^^xsd:integer;
+  uiaa-s:firstAscentYear "22 August 1864"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "491";
+  uiaa-s:isolation "4.5";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Florence Crauford Grove"^^xsd:string, " Leslie Stephen"^^xsd:string,
+    " Jakob and Melchior Anderegg"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Hohlicht Pass";
+  uiaa-s:isolatedTo uiaa:Weisshorn;
+  uiaa-s:peakName "Zinalrothorn" .
+
+uiaa:Hohberghorn a uiaa-s:summit;
+  uiaa-s:elevation "4218"^^xsd:integer;
+  uiaa-s:firstAscentYear "August 1869"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "76";
+  uiaa-s:isolation "0.4";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " R. B. Heathcote"^^xsd:string, " Franz Biner"^^xsd:string, " Peter Perren"^^xsd:string,
+    " Peter Taugwalder"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Hohbergjoch";
+  uiaa-s:isolatedTo uiaa:Stecknadelhorn;
+  uiaa-s:peakName "Hohberghorn" .
+
+uiaa:Vincent-Pyramid a uiaa-s:summit;
+  uiaa-s:elevation "4215"^^xsd:integer;
+  uiaa-s:firstAscentYear "5 August 1819"^^xsd:date;
+  uiaa-s:country "Italy";
+  uiaa-s:prominence "128";
+  uiaa-s:isolation "0.7";
+  uiaa-s:inRange uiaa-range:Monte-Rosa-Massif;
+  uiaa-s:firstClimber " Johann Nikolaus Vincent"^^xsd:string, " three unknown companions"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Schwarzhorn";
+  uiaa-s:isolatedTo uiaa:Schwarzhorn-Corno-Nero;
+  uiaa-s:peakName "Vincent Pyramid" .
+
+uiaa:Grandes-Jorasses-Pointe-Walker a uiaa-s:summit;
+  uiaa-s:elevation "4208"^^xsd:integer;
+  uiaa-s:firstAscentYear "30 June 1868"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "852";
+  uiaa-s:isolation "7.9";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Horace Walker"^^xsd:string, " Melchior Anderegg"^^xsd:string,
+    " J. Jaun"^^xsd:string, " J. Grange"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col du Géant";
+  uiaa-s:isolatedTo uiaa:Mont-Blanc-du-Tacul;
+  uiaa-s:peakName "Grandes Jorasses (Pointe Walker)" .
+
+uiaa:Alphubel a uiaa-s:summit;
+  uiaa-s:elevation "4206"^^xsd:integer;
+  uiaa-s:firstAscentYear "9 August 1860"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "359";
+  uiaa-s:isolation "2.3";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " T .W. Hinchliff"^^xsd:string, " Leslie Stephen"^^xsd:string,
+    " Melchior Anderegg"^^xsd:string, " Peter Perren"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Mischabeljoch";
+  uiaa-s:isolatedTo uiaa:Täschhorn;
+  uiaa-s:peakName "Alphubel" .
+
+uiaa:Rimpfischhorn a uiaa-s:summit;
+  uiaa-s:elevation "4199"^^xsd:integer;
+  uiaa-s:firstAscentYear "9 September 1859"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "647";
+  uiaa-s:isolation "4.7";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " Leslie Stephen"^^xsd:string, " Robert Liveing"^^xsd:string,
+    " Melchior Anderegg"^^xsd:string, " Johann Zumtaugwald"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Allalin Pass";
+  uiaa-s:isolatedTo uiaa:Alphubel;
+  uiaa-s:peakName "Rimpfischhorn" .
+
+uiaa:Aletschhorn a uiaa-s:summit;
+  uiaa-s:elevation "4194"^^xsd:integer;
+  uiaa-s:firstAscentYear "18 June 1859"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "1043";
+  uiaa-s:isolation "13.5";
+  uiaa-s:inRange uiaa-range:Bernese-Alps;
+  uiaa-s:firstClimber " Francis F. Tuckett"^^xsd:string, " Johann Joseph Bennen"^^xsd:string,
+    " Peter Bohren"^^xsd:string, " V. Tairraz"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Lötschenlücke";
+  uiaa-s:isolatedTo uiaa:Finsteraarhorn;
+  uiaa-s:peakName "Aletschhorn" .
+
+uiaa:Strahlhorn a uiaa-s:summit;
+  uiaa-s:elevation "4190"^^xsd:integer;
+  uiaa-s:firstAscentYear "15 August 1854"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "404";
+  uiaa-s:isolation "1.8";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " Edmund J. Grenville"^^xsd:string, " Christopher Smyth"^^xsd:string,
+    " Franz-Josef Andenmatten"^^xsd:string, " Ulrich Lauener"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Alder Pass";
+  uiaa-s:isolatedTo uiaa:Rimpfischhorn;
+  uiaa-s:peakName "Strahlhorn" .
+
+uiaa:Combin-de-Valsorey a uiaa-s:summit;
+  uiaa-s:elevation "4184"^^xsd:integer;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "57";
+  uiaa-s:isolation "0.5";
+  uiaa-s:inRange uiaa-range:Grand-Combin;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Combin de Grafeneire";
+  uiaa-s:isolatedTo uiaa:Combin-de-Grafeneire;
+  uiaa-s:peakName "Combin de Valsorey" .
+
+uiaa:Grandes-Jorasses-Pointe-Whymper a uiaa-s:summit;
+  uiaa-s:elevation "4184"^^xsd:integer;
+  uiaa-s:firstAscentYear "24. June 1865"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "51";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Edward Whymper"^^xsd:string, " Michel Croz"^^xsd:string, " Christian Almer"^^xsd:string,
+    " F. Biner"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "col with the Pointe Walker";
+  uiaa-s:isolatedTo uiaa:Pointe-Walker;
+  uiaa-s:peakName "Grandes Jorasses (Pointe Whymper)" .
+
+uiaa:Dent-dHérens a uiaa-s:summit;
+  uiaa-s:elevation "4173"^^xsd:integer;
+  uiaa-s:firstAscentYear "12 August 1863"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "704";
+  uiaa-s:isolation "4.2";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Florence Crauford Grove"^^xsd:string, " Melchior Anderegg and 5 companions"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Colle Tournanche";
+  uiaa-s:isolatedTo uiaa:Matterhorn;
+  uiaa-s:peakName "Dent d’Hérens" .
+
+uiaa:Breithorn-Western-Summit a uiaa-s:summit;
+  uiaa-s:elevation "4160"^^xsd:integer;
+  uiaa-s:firstAscentYear "13 August 1813"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "438";
+  uiaa-s:isolation "4.2";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Henri Maynard"^^xsd:string, " Joseph-Marie Couttet"^^xsd:string,
+    " Jean Gras"^^xsd:string, " Jean-Baptiste and Jean-Jacques Erin"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Schwarztor";
+  uiaa-s:isolatedTo uiaa:Castor;
+  uiaa-s:peakName "Breithorn (Western Summit)" .
+
+uiaa:Jungfrau a uiaa-s:summit;
+  uiaa-s:elevation "4158"^^xsd:integer;
+  uiaa-s:firstAscentYear "3 August 1811"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "694";
+  uiaa-s:isolation "8.3";
+  uiaa-s:inRange uiaa-range:Bernese-Alps;
+  uiaa-s:firstClimber " Johann Rudolf"^^xsd:string, " Hieronymus Meyer"^^xsd:string,
+    " Alois Volker"^^xsd:string, " Joseph Bortis"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Jungfraujoch";
+  uiaa-s:isolatedTo uiaa:Aletschhorn;
+  uiaa-s:peakName "Jungfrau" .
+
+uiaa:Breithorn-Central-Summit a uiaa-s:summit;
+  uiaa-s:elevation "4154"^^xsd:integer;
+  uiaa-s:firstAscentYear "13 August 1813"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "73";
+  uiaa-s:isolation "0.7";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Henri Maynard"^^xsd:string, " Joseph-Marie Couttet"^^xsd:string,
+    " Jean Gras"^^xsd:string, " Jean-Baptiste and Jean-Jacques Erin"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the (Western Summit)";
+  uiaa-s:isolatedTo uiaa:Breithorn-Western-Summit;
+  uiaa-s:peakName "Breithorn (Central Summit)" .
+
+uiaa:Bishorn a uiaa-s:summit;
+  uiaa-s:elevation "4151"^^xsd:integer;
+  uiaa-s:firstAscentYear "18 August 1884"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "90";
+  uiaa-s:isolation "0.8";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " G. S. Barnes"^^xsd:string, " R. Chessyre-Walker"^^xsd:string,
+    " Joseph Imboden"^^xsd:string, " J. M. Chanton"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Weisshornjoch";
+  uiaa-s:isolatedTo uiaa:Weisshorn;
+  uiaa-s:peakName "Bishorn" .
+
+uiaa:Eastern-Breithorn-Eastern-Summitwestern-Twin-Peak a uiaa-s:summit;
+  uiaa-s:elevation "4138"^^xsd:integer;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "120";
+  uiaa-s:isolation "0.8";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:highestSaddleToReachHigherSummit "Selle";
+  uiaa-s:isolatedTo uiaa:Breithorn-Central-Summit;
+  uiaa-s:peakName "Eastern Breithorn (Eastern Summit/western Twin Peak)" .
+
+uiaa:Combin-de-la-Tsessette a uiaa-s:summit;
+  uiaa-s:elevation "4132"^^xsd:integer;
+  uiaa-s:firstAscentYear "21 July 1894"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "57";
+  uiaa-s:isolation "0.9";
+  uiaa-s:inRange uiaa-range:Grand-Combin;
+  uiaa-s:firstClimber " E.F.M.Benecke and H.A.Cohen"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Combin de Grafeneire";
+  uiaa-s:isolatedTo uiaa:Combin-de-Grafeneire;
+  uiaa-s:peakName "Combin de la Tsessette" .
+
+uiaa:Aiguille-Verte a uiaa-s:summit;
+  uiaa-s:elevation "4122"^^xsd:integer;
+  uiaa-s:firstAscentYear "29 June 1865"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "689";
+  uiaa-s:isolation "7.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Edward Whymper"^^xsd:string, " Christian Almer"^^xsd:string,
+    " Franz Biner"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col de l’Eboulement";
+  uiaa-s:isolatedTo uiaa:Grandes-Jorasses;
+  uiaa-s:peakName "Aiguille Verte" .
+
+uiaa:Aiguilles-du-Diable-LIsolée a uiaa-s:summit;
+  uiaa-s:elevation "4114"^^xsd:integer;
+  uiaa-s:firstAscentYear "1925"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "36";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Antoine Blanchet"^^xsd:string, " Armand Charlet"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to Mont Blanc du Tacul";
+  uiaa-s:isolatedTo uiaa:Mont-Blanc-du-Tacul;
+  uiaa-s:peakName "Aiguilles du Diable (L’Isolée)" .
+
+uiaa:Aiguille-Blanche-de-Peuterey a uiaa-s:summit;
+  uiaa-s:elevation "4112"^^xsd:integer;
+  uiaa-s:firstAscentYear "31 July 1885"^^xsd:date;
+  uiaa-s:country "Italy";
+  uiaa-s:prominence "178";
+  uiaa-s:isolation "1";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Henry S. King"^^xsd:string, " Emile Rey"^^xsd:string, " Ambros Supersaxo"^^xsd:string,
+    " Aloys Anthamatten"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col de Peuterey";
+  uiaa-s:isolatedTo uiaa:Mont-Blanc;
+  uiaa-s:peakName "Aiguille Blanche de Peuterey" .
+
+uiaa:Mönch a uiaa-s:summit;
+  uiaa-s:elevation "4110"^^xsd:integer;
+  uiaa-s:firstAscentYear "15 August 1857"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "591";
+  uiaa-s:isolation "3.5";
+  uiaa-s:inRange uiaa-range:Bernese-Alps;
+  uiaa-s:firstClimber " Sigismund Porges"^^xsd:string, " Christian Almer"^^xsd:string,
+    " Christian and Ulrich Kaufmann"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Unteres Mönchsjoch";
+  uiaa-s:isolatedTo uiaa:Jungfrau;
+  uiaa-s:peakName "Mönch" .
+
+uiaa:Grandes-Jorasses-Pointe-Croz a uiaa-s:summit;
+  uiaa-s:elevation "4110"^^xsd:integer;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "10";
+  uiaa-s:isolation "0.4";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:highestSaddleToReachHigherSummit "col with Pointe Walker";
+  uiaa-s:isolatedTo uiaa:Pointe-Whymper;
+  uiaa-s:peakName "Grandes Jorasses (Pointe Croz)" .
+
+uiaa:Aiguilles-du-Diable-Pointe-Carmen- a uiaa-s:summit;
+  uiaa-s:elevation "4109"^^xsd:integer;
+  uiaa-s:firstAscentYear "1923"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "36";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Brégault"^^xsd:string, " Chevalier"^^xsd:string, " De Lépiney"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "col with L'Isolée";
+  uiaa-s:isolatedTo <summit/L'Isolée>;
+  uiaa-s:peakName "Aiguilles du Diable (Pointe Carmen) " .
+
+uiaa:Breithorn-Gendarmeastern-Twin-Peak a uiaa-s:summit;
+  uiaa-s:elevation "4106"^^xsd:integer;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "36";
+  uiaa-s:isolation "0.3";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to western Twin Peak";
+  uiaa-s:isolatedTo uiaa:Breithorn-eastern-Twin-Peak;
+  uiaa-s:peakName "Breithorn (Gendarm/eastern Twin Peak)" .
+
+uiaa:Grande-Rocheuse a uiaa-s:summit;
+  uiaa-s:elevation "4102"^^xsd:integer;
+  uiaa-s:firstAscentYear "17 September 1865"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "52";
+  uiaa-s:isolation "0.3";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Robert Fowler"^^xsd:string, " Michel Ducroz"^^xsd:string, " Michel Balmat"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "col with the Aiguille Verte";
+  uiaa-s:isolatedTo uiaa:Aiguille-Verte;
+  uiaa-s:peakName "Grande Rocheuse" .
+
+uiaa:Barre-des-Écrins a uiaa-s:summit;
+  uiaa-s:elevation "4102"^^xsd:integer;
+  uiaa-s:firstAscentYear "25 June 1864"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "2045";
+  uiaa-s:isolation "107.3";
+  uiaa-s:inRange uiaa-range:Pelvoux;
+  uiaa-s:firstClimber " Edward Whymper"^^xsd:string, " Horace Walker"^^xsd:string, " Adolphus W. Moore"^^xsd:string,
+    " Christian Almer"^^xsd:string, " Michel Croz"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col du Lautaret";
+  uiaa-s:isolatedTo uiaa:Picco-Luigi-Amedeo;
+  uiaa-s:peakName "Barre des Écrins" .
+
+uiaa:Aiguilles-du-Diable-Pointe-Médiane a uiaa-s:summit;
+  uiaa-s:elevation "4097"^^xsd:integer;
+  uiaa-s:firstAscentYear "1925"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "40";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Antoine Blanchet"^^xsd:string, " Jean Chaubert"^^xsd:string,
+    " Armand Charlet"^^xsd:string, " Devouassoud"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "col with the Carmen";
+  uiaa-s:isolatedTo uiaa:Pointe-Carmen;
+  uiaa-s:peakName "Aiguilles du Diable (Pointe Médiane)" .
+
+uiaa:Pollux a uiaa-s:summit;
+  uiaa-s:elevation "4089"^^xsd:integer;
+  uiaa-s:firstAscentYear "1 August 1864"^^xsd:date;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "243";
+  uiaa-s:isolation "0.7";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Jules Jacot"^^xsd:string, " Josef-Marie Perren"^^xsd:string,
+    " Peter Taugwalder sen."^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Zwillingsjoch";
+  uiaa-s:isolatedTo uiaa:Castor;
+  uiaa-s:peakName "Pollux" .
+
+uiaa:Schreckhorn a uiaa-s:summit;
+  uiaa-s:elevation "4078"^^xsd:integer;
+  uiaa-s:firstAscentYear "1 August 1864"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "795";
+  uiaa-s:isolation "5.9";
+  uiaa-s:inRange uiaa-range:Bernese-Alps;
+  uiaa-s:firstClimber " Leslie Stephen"^^xsd:string, " Ulrich Kaufmann"^^xsd:string,
+    " Peter and Christian Michel"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Finsteraarjoch";
+  uiaa-s:isolatedTo uiaa:Finsteraarhorn;
+  uiaa-s:peakName "Schreckhorn" .
+
+uiaa:Breithorn-Roccia-Nera a uiaa-s:summit;
+  uiaa-s:elevation "4075"^^xsd:integer;
+  uiaa-s:country "Italy", "Switzerland";
+  uiaa-s:prominence "30";
+  uiaa-s:isolation "0.4";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Zwilling East";
+  uiaa-s:isolatedTo uiaa:Zwilling-Ost;
+  uiaa-s:peakName "Breithorn (Roccia Nera)" .
+
+uiaa:Aiguilles-du-Diable-Pointe-Chaubert a uiaa-s:summit;
+  uiaa-s:elevation "4074"^^xsd:integer;
+  uiaa-s:firstAscentYear "1925"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "57";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Jean Chaubert"^^xsd:string, " Armand Charlet"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Médiane";
+  uiaa-s:isolatedTo uiaa:Pointe-Médiane;
+  uiaa-s:peakName "Aiguilles du Diable (Pointe Chaubert)" .
+
+uiaa:Mont-Brouillard a uiaa-s:summit;
+  uiaa-s:elevation "4069"^^xsd:integer;
+  uiaa-s:firstAscentYear "1906"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "39";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Karl Blodig"^^xsd:string, " Oscar Eckenstein"^^xsd:string, " Alessio Brocherel"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col Emile Rey";
+  uiaa-s:isolatedTo uiaa:Picco-Luigi-Amedeo;
+  uiaa-s:peakName "Mont Brouillard" .
+
+uiaa:Grandes-Jorasses-Pointe-Marguerite a uiaa-s:summit;
+  uiaa-s:elevation "4065"^^xsd:integer;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "50";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:highestSaddleToReachHigherSummit "col with Pointe Croz";
+  uiaa-s:isolatedTo uiaa:Pointe-Croz;
+  uiaa-s:peakName "Grandes Jorasses (Pointe Marguerite)" .
+
+uiaa:Aiguilles-du-Diable-Corne-du-Diable a uiaa-s:summit;
+  uiaa-s:elevation "4064"^^xsd:integer;
+  uiaa-s:firstAscentYear "1925"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "19";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Jean Chaubert"^^xsd:string, " Armand Charlet"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Chaubert";
+  uiaa-s:isolatedTo uiaa:Pointe-Chaubert;
+  uiaa-s:peakName "Aiguilles du Diable (Corne du Diable)" .
+
+uiaa:Ober-Gabelhorn a uiaa-s:summit;
+  uiaa-s:elevation "4063"^^xsd:integer;
+  uiaa-s:firstAscentYear "6 July 1865"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "536";
+  uiaa-s:isolation "3.1";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Horace Walker"^^xsd:string, " Adolphus W. Moore"^^xsd:string,
+    " Jakob Anderegg"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Triftjoch";
+  uiaa-s:isolatedTo uiaa:Zinalrothorn;
+  uiaa-s:peakName "Ober Gabelhorn" .
+
+uiaa:Gran-Paradiso a uiaa-s:summit;
+  uiaa-s:elevation "4061"^^xsd:integer;
+  uiaa-s:firstAscentYear "4. September 1860"^^xsd:date;
+  uiaa-s:country "Italy";
+  uiaa-s:prominence "1888";
+  uiaa-s:isolation "45.1";
+  uiaa-s:inRange uiaa-range:Graian-Alps;
+  uiaa-s:firstClimber " John J. Cowell"^^xsd:string, " W. Dundas"^^xsd:string, " Jean Tairraz"^^xsd:string,
+    " Michel-Clément Payot"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Nahe Kleiner Sankt Bernhard";
+  uiaa-s:isolatedTo uiaa:Grandes-Jorasses;
+  uiaa-s:peakName "Gran Paradiso" .
+
+uiaa:Aiguille-de-Bionnassay a uiaa-s:summit;
+  uiaa-s:elevation "4052"^^xsd:integer;
+  uiaa-s:firstAscentYear "28 July 1865"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "164";
+  uiaa-s:isolation "1.8";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " E.N. Buxton"^^xsd:string, " F.C. Grove"^^xsd:string, " R.J.S. Macdonald"^^xsd:string,
+    " Michel Payot"^^xsd:string, " Jean-Pierre Cachat"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col de Bionnassay";
+  uiaa-s:isolatedTo uiaa:Dôme-du-Goûter;
+  uiaa-s:peakName "Aiguille de Bionnassay" .
+
+uiaa:Gross-Fiescherhorn a uiaa-s:summit;
+  uiaa-s:elevation "4049"^^xsd:integer;
+  uiaa-s:firstAscentYear "23 July 1862"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "396";
+  uiaa-s:isolation "4.7";
+  uiaa-s:inRange uiaa-range:Bernese-Alps;
+  uiaa-s:firstClimber " Adolphus W. Moore"^^xsd:string, " H. B. George"^^xsd:string,
+    " Ulrich Kaufmann"^^xsd:string, " Christian Almer"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Fiescherjoch";
+  uiaa-s:isolatedTo uiaa:Mönch;
+  uiaa-s:peakName "Gross Fiescherhorn" .
+
+uiaa:Piz-Bernina a uiaa-s:summit;
+  uiaa-s:elevation "4048"^^xsd:integer;
+  uiaa-s:firstAscentYear "13 September 1850"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "2236";
+  uiaa-s:isolation "138";
+  uiaa-s:inRange uiaa-range:Bernina-Group;
+  uiaa-s:firstClimber " Johann Coaz"^^xsd:string, " Jon and Lorenz Ragut Tscharner"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Maloja Pass";
+  uiaa-s:isolatedTo uiaa:Finsteraarhorn;
+  uiaa-s:peakName "Piz Bernina" .
+
+uiaa:Vincent-Pyramid-Punta-GiordaniGiordanispetz a uiaa-s:summit;
+  uiaa-s:elevation "4046"^^xsd:integer;
+  uiaa-s:firstAscentYear "23 July 1801"^^xsd:date;
+  uiaa-s:country "Italy";
+  uiaa-s:prominence "6";
+  uiaa-s:isolation "0.1";
+  uiaa-s:inRange uiaa-range:Monte-Rosa-Massif;
+  uiaa-s:firstClimber " Pietro Giordani "^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "col with the Vincent Pyramid";
+  uiaa-s:isolatedTo uiaa:Vincent-Pyramid;
+  uiaa-s:peakName "Vincent Pyramid (Punta Giordani/Giordanispetz)" .
+
+uiaa:Grandes-Jorasses-Pointe-Elena a uiaa-s:summit;
+  uiaa-s:elevation "4045"^^xsd:integer;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "10";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:highestSaddleToReachHigherSummit "col with Pointe Marguerite";
+  uiaa-s:isolatedTo uiaa:Pointe-Marguerite;
+  uiaa-s:peakName "Grandes Jorasses (Pointe Elena)" .
+
+uiaa:Grünhorn a uiaa-s:summit;
+  uiaa-s:elevation "4043"^^xsd:integer;
+  uiaa-s:firstAscentYear "7 August 1865"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "303";
+  uiaa-s:isolation "2.5";
+  uiaa-s:inRange uiaa-range:Bernese-Alps;
+  uiaa-s:firstClimber " Edmund von Fellenberg"^^xsd:string, " Peter Michel"^^xsd:string,
+    " Peter Egger"^^xsd:string, " Peter Inäbnit"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Kleine Grünhornlücke";
+  uiaa-s:isolatedTo uiaa:Gross-Fiescherhorn;
+  uiaa-s:peakName "Grünhorn" .
+
+uiaa:Lauteraarhorn a uiaa-s:summit;
+  uiaa-s:elevation "4042"^^xsd:integer;
+  uiaa-s:firstAscentYear "7 August 1865"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "128";
+  uiaa-s:isolation "1";
+  uiaa-s:inRange uiaa-range:Bernese-Alps;
+  uiaa-s:firstClimber " Pierre Desor"^^xsd:string, " Arnold Escher von der Linth"^^xsd:string,
+    " Christian Girard"^^xsd:string, " Melchior Bannholzer"^^xsd:string, " Jakob Leuthold"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Schreckhorn Saddle";
+  uiaa-s:isolatedTo uiaa:Gross-Fiescherhorn;
+  uiaa-s:peakName "Lauteraarhorn" .
+
+uiaa:Aiguille-du-Jardin a uiaa-s:summit;
+  uiaa-s:elevation "4035"^^xsd:integer;
+  uiaa-s:firstAscentYear "1 August 1904"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "37";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " E. Fontaine"^^xsd:string, " Jean Ravanel"^^xsd:string, " Léon Tournier"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "col with the Rocheuse";
+  uiaa-s:isolatedTo uiaa:Grande-Rocheuse;
+  uiaa-s:peakName "Aiguille du Jardin" .
+
+uiaa:Dürrenhorn a uiaa-s:summit;
+  uiaa-s:elevation "4035"^^xsd:integer;
+  uiaa-s:firstAscentYear "7 September 1879"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "124";
+  uiaa-s:isolation "0.8";
+  uiaa-s:inRange uiaa-range:Mischabel-Group;
+  uiaa-s:firstClimber " Albert F. Mummery"^^xsd:string, " William Penhall"^^xsd:string,
+    " Alexander Burgener"^^xsd:string, " Ferdinand Imseng"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Dürrenjoch";
+  uiaa-s:isolatedTo uiaa:Hohberghorn;
+  uiaa-s:peakName "Dürrenhorn" .
+
+uiaa:Allalinhorn a uiaa-s:summit;
+  uiaa-s:elevation "4027"^^xsd:integer;
+  uiaa-s:firstAscentYear "28 August 1856"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "257";
+  uiaa-s:isolation "2.1";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Edward L. Ames"^^xsd:string, " Johann Josef Imseng"^^xsd:string,
+    " Franz Josef Andenmatten"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Alphubeljoch";
+  uiaa-s:isolatedTo uiaa:Rimpfischhorn;
+  uiaa-s:peakName "Allalinhorn" .
+
+uiaa:Hinter-Fiescherhorn a uiaa-s:summit;
+  uiaa-s:elevation "4025"^^xsd:integer;
+  uiaa-s:firstAscentYear "28 July 1885"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "102";
+  uiaa-s:isolation "0.7";
+  uiaa-s:inRange uiaa-range:Bernese-Alps;
+  uiaa-s:firstClimber " Eugen Guido Lammer"^^xsd:string, " August Lorria"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Fiescher Saddle";
+  uiaa-s:isolatedTo uiaa:Gross-Fiescherhorn;
+  uiaa-s:peakName "Hinter Fiescherhorn" .
+
+uiaa:Dôme-de-Rochefort a uiaa-s:summit;
+  uiaa-s:elevation "4015"^^xsd:integer;
+  uiaa-s:firstAscentYear "12 August 1881"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "206";
+  uiaa-s:isolation "0.9";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Alphonse Payot"^^xsd:string, " Michel-Clément Payot"^^xsd:string,
+    " J. Eccles"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col des Grandes Jorasses";
+  uiaa-s:isolatedTo uiaa:Pointe-Marguerite;
+  uiaa-s:peakName "Dôme de Rochefort" .
+
+uiaa:Barre-des-Écrins-Dôme-de-Neige a uiaa-s:summit;
+  uiaa-s:elevation "4015"^^xsd:integer;
+  uiaa-s:country "France";
+  uiaa-s:prominence "41";
+  uiaa-s:isolation "0.2";
+  uiaa-s:inRange uiaa-range:Pelvoux;
+  uiaa-s:highestSaddleToReachHigherSummit "Brèche Lory";
+  uiaa-s:isolatedTo uiaa:Barre-des-Écrins;
+  uiaa-s:peakName "Barre des Écrins (Dôme de Neige)" .
+
+uiaa:Weissmies a uiaa-s:summit;
+  uiaa-s:elevation "4013"^^xsd:integer;
+  uiaa-s:firstAscentYear "Late August 1855"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "1183";
+  uiaa-s:isolation "11.2";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " de:Jakob Christian Heusser"^^xsd:string, " Peter Josef Zurbriggen"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Mondelli Pass";
+  uiaa-s:isolatedTo uiaa:Lenzspitze;
+  uiaa-s:peakName "Weissmies" .
+
+uiaa:Dent-du-Géant a uiaa-s:summit;
+  uiaa-s:elevation "4013"^^xsd:integer;
+  uiaa-s:firstAscentYear "28 July 1882"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "139";
+  uiaa-s:isolation "1.2";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Jean-Joseph"^^xsd:string, " Baptiste and Daniel Maquignaz (\"Pointe Sella\")te 4] "^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "col with the Aiguille de Rochefort";
+  uiaa-s:isolatedTo uiaa:Dôme-de-Rochefort;
+  uiaa-s:peakName "Dent du Géant" .
+
+uiaa:Punta-Baretti a uiaa-s:summit;
+  uiaa-s:elevation "4013"^^xsd:integer;
+  uiaa-s:firstAscentYear "28 July 1880"^^xsd:date;
+  uiaa-s:country "Italy";
+  uiaa-s:prominence "56";
+  uiaa-s:isolation "0.3";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Martino Baretti"^^xsd:string, " Jean-Joseph Maquignaz"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Mont Brouillard";
+  uiaa-s:isolatedTo uiaa:Mont-Brouillard;
+  uiaa-s:peakName "Punta Baretti" .
+
+uiaa:Lagginhorn a uiaa-s:summit;
+  uiaa-s:elevation "4010"^^xsd:integer;
+  uiaa-s:firstAscentYear "26 July 1856"^^xsd:date;
+  uiaa-s:country "Switzerland";
+  uiaa-s:prominence "512";
+  uiaa-s:isolation "3.3";
+  uiaa-s:inRange uiaa-range:Wallis-Alps;
+  uiaa-s:firstClimber " Edward L. Ames"^^xsd:string, " Johann Josef Imseng"^^xsd:string,
+    " Franz-Josef Andenmatten"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Lagginjoch";
+  uiaa-s:isolatedTo uiaa:Weissmies;
+  uiaa-s:peakName "Lagginhorn" .
+
+uiaa:Aiguille-de-Rochefort a uiaa-s:summit;
+  uiaa-s:elevation "4001"^^xsd:integer;
+  uiaa-s:firstAscentYear "14. August 1873"^^xsd:date;
+  uiaa-s:country "France", "Italy";
+  uiaa-s:prominence "106";
+  uiaa-s:isolation "0.6";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Alphonse Payot"^^xsd:string, " Michel-Clément Payot"^^xsd:string,
+    " J. Eccles"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col to the Dôme de Rochefort";
+  uiaa-s:isolatedTo uiaa:Dent-du-Géant;
+  uiaa-s:peakName "Aiguille de Rochefort" .
+
+uiaa:Les-Droites a uiaa-s:summit;
+  uiaa-s:elevation "4000"^^xsd:integer;
+  uiaa-s:firstAscentYear "7 August 1876"^^xsd:date;
+  uiaa-s:country "France";
+  uiaa-s:prominence "204";
+  uiaa-s:isolation "0.7";
+  uiaa-s:inRange uiaa-range:Mont-Blanc-Group;
+  uiaa-s:firstClimber " Thomas Middlemore"^^xsd:string, " John Oakley Maund"^^xsd:string,
+    " Henri Cordier"^^xsd:string, " Johann Jaun"^^xsd:string, " Andreas Maurer"^^xsd:string;
+  uiaa-s:highestSaddleToReachHigherSummit "Col de l’ Aiguille Verte";
+  uiaa-s:isolatedTo uiaa:Grande-Rocheuse;
+  uiaa-s:peakName "Les Droites" .

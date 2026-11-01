@@ -1,0 +1,136 @@
+#################################################################
+# Krok 2: RDFS – třídy a vlastnosti pro data o ZCHÚ
+# Navazuje na třídy z bivak.ttl (cvičení 3 a 4), prefix bv: je stejný.
+#################################################################
+
+@prefix bv:   <https://example.org/bivak#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#################################################################
+# 1. Třídy
+#################################################################
+
+bv:Area a rdfs:Class ;
+    rdfs:label "Území"@cs , "Area"@en .
+
+bv:ProtectedArea a rdfs:Class ;
+    rdfs:subClassOf bv:Area ;
+    rdfs:label "Zvláště chráněné území"@cs , "Specially protected area"@en .
+
+# --- Velkoplošná ZCHÚ (soubor vzchu.csv) ---
+bv:LargeScaleProtectedArea a rdfs:Class ;
+    rdfs:subClassOf bv:ProtectedArea ;
+    rdfs:label "Velkoplošné ZCHÚ"@cs , "Large-scale protected area"@en .
+bv:NationalPark a rdfs:Class ;
+    rdfs:subClassOf bv:LargeScaleProtectedArea ;
+    rdfs:label "Národní park"@cs , "National park"@en .
+bv:ProtectedLandscapeArea a rdfs:Class ;
+    rdfs:subClassOf bv:LargeScaleProtectedArea ;
+    rdfs:label "Chráněná krajinná oblast"@cs , "Protected landscape area"@en .
+
+# --- Maloplošná ZCHÚ (soubor mzchu.csv) ---
+bv:SmallScaleProtectedArea a rdfs:Class ;
+    rdfs:subClassOf bv:ProtectedArea ;
+    rdfs:label "Maloplošné ZCHÚ"@cs , "Small-scale protected area"@en .
+bv:NationalNatureReserve a rdfs:Class ;
+    rdfs:subClassOf bv:SmallScaleProtectedArea ;
+    rdfs:label "Národní přírodní rezervace"@cs , "National nature reserve"@en .
+bv:NatureReserve a rdfs:Class ;
+    rdfs:subClassOf bv:SmallScaleProtectedArea ;
+    rdfs:label "Přírodní rezervace"@cs , "Nature reserve"@en .
+bv:NationalNatureMonument a rdfs:Class ;
+    rdfs:subClassOf bv:SmallScaleProtectedArea ;
+    rdfs:label "Národní přírodní památka"@cs , "National nature monument"@en .
+bv:NatureMonument a rdfs:Class ;
+    rdfs:subClassOf bv:SmallScaleProtectedArea ;
+    rdfs:label "Přírodní památka"@cs , "Nature monument"@en .
+
+# --- Ochranná pásma: dřív řetězec v OP_TYP, teď samostatný objekt ---
+bv:ProtectiveZone a rdfs:Class ;
+    rdfs:subClassOf bv:Area ;
+    rdfs:label "Ochranné pásmo"@cs , "Protective zone"@en .
+bv:NationalParkProtectiveZone a rdfs:Class ;
+    rdfs:subClassOf bv:ProtectiveZone ;
+    rdfs:label "Ochranné pásmo národního parku"@cs , "National park protective zone"@en .
+
+#################################################################
+# 2. Vlastnosti s odkazem na pojem SKOS (dřív řetězec)
+#################################################################
+
+bv:category a rdf:Property ;
+    rdfs:label "kategorie"@cs , "category"@en ;
+    rdfs:comment "Kategorie území ze schématu kat:schema (sloupec KAT)."@cs ;
+    rdfs:domain bv:Area ;             # ne ProtectedArea: kategorii OP má i pásmo NP
+    rdfs:range skos:Concept .
+
+bv:iucnCategory a rdf:Property ;
+    rdfs:label "kategorie IUCN"@cs , "IUCN category"@en ;
+    rdfs:comment "Kategorie ze schématu iucn:schema (sloupec IUCN)."@cs ;
+    rdfs:domain bv:ProtectedArea ;
+    rdfs:range skos:Concept .
+
+bv:zoneType a rdf:Property ;
+    rdfs:label "typ ochranného pásma"@cs , "zone type"@en ;
+    rdfs:comment "Typ pásma ze schématu optyp:schema (sloupec OP_TYP)."@cs ;
+    rdfs:domain bv:ProtectiveZone ;
+    rdfs:range skos:Concept .
+
+#################################################################
+# 3. Vztahy mezi objekty
+#################################################################
+
+bv:hasProtectiveZone a rdf:Property ;
+    rdfs:label "má ochranné pásmo"@cs , "has protective zone"@en ;
+    rdfs:domain bv:ProtectedArea ;
+    rdfs:range bv:ProtectiveZone .
+
+bv:protectiveZoneOf a rdf:Property ;
+    rdfs:label "je ochranným pásmem"@cs , "is protective zone of"@en ;
+    rdfs:domain bv:ProtectiveZone ;
+    rdfs:range bv:ProtectedArea .
+
+bv:liesWithin a rdf:Property ;
+    rdfs:label "leží v"@cs , "lies within"@en ;
+    rdfs:domain bv:Area ;
+    rdfs:range bv:Area .
+
+bv:overlaps a rdf:Property ;
+    rdfs:label "překrývá se s"@cs , "overlaps"@en ;
+    rdfs:domain bv:Area ;
+    rdfs:range bv:Area .
+
+#################################################################
+# 4. Vlastnosti s hodnotou (literály s datovým typem)
+#################################################################
+
+bv:aopkCode a rdf:Property ;
+    rdfs:label "kód AOPK"@cs , "AOPK code"@en ;
+    rdfs:comment "Identifikátor, ne číslo – zůstává řetězcem (sloupec KOD)."@cs ;
+    rdfs:domain bv:Area ;
+    rdfs:range xsd:string .
+
+bv:areaHa a rdf:Property ;
+    rdfs:label "rozloha (ha)"@cs , "area (ha)"@en ;
+    rdfs:domain bv:Area ;
+    rdfs:range xsd:decimal .
+
+bv:geometryChanged a rdf:Property ;
+    rdfs:label "změna hranic"@cs , "geometry changed"@en ;
+    rdfs:comment "Sloupec ZMENA_G; v CSV jako číslo 20050120."@cs ;
+    rdfs:domain bv:Area ;
+    rdfs:range xsd:date .
+
+bv:attributesChanged a rdf:Property ;
+    rdfs:label "změna atributů"@cs , "attributes changed"@en ;
+    rdfs:comment "Sloupec ZMENA_T."@cs ;
+    rdfs:domain bv:Area ;
+    rdfs:range xsd:date .
+
+bv:hasOverlap a rdf:Property ;
+    rdfs:label "má překryv"@cs , "has overlap"@en ;
+    rdfs:comment "Sloupec PREKRYV (0/1). Neříká, s čím se území překrývá – k tomu slouží bv:overlaps."@cs ;
+    rdfs:domain bv:Area ;
+    rdfs:range xsd:boolean .

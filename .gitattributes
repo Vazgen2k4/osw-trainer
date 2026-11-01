@@ -1,0 +1,3 @@
+# keep the shell launcher runnable when the repository is cloned on Windows and used from WSL/Git Bash
+*.sh text eol=lf
+*.arb text eol=lf

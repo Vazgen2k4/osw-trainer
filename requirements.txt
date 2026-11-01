@@ -1,0 +1,5 @@
+# Core: RDF parsing, SPARQL and RDFS inference.
+# rdflib stays below 7.3 because Morph-KGC (requirements-rml.txt) requires it; owlrl 7.1.x is the
+# last line that supports rdflib 7.1–7.2 (owlrl 7.6 needs rdflib >= 7.6).
+rdflib>=7.1,<7.3
+owlrl>=7.1,<7.2

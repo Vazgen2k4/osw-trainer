@@ -1,0 +1,2513 @@
+{
+ "version": 1,
+ "tabs": [
+  {
+   "id": "learn"
+  },
+  {
+   "id": "sparql"
+  },
+  {
+   "id": "rdf"
+  },
+  {
+   "id": "exam"
+  },
+  {
+   "id": "test2",
+   "hidden": true
+  }
+ ],
+ "lessons": [
+  {
+   "id": 1,
+   "tab": "learn",
+   "part": "learn1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "# your Turtle\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n:SpotH rdfs:label \"Louka\"@cs .\n",
+   "taskOriginal": "Declare two prefixes (<code>:</code> = <code>https://example.org/bivak#</code> and <code>rdfs:</code> = <code>http://www.w3.org/2000/01/rdf-schema#</code>, the standard RDFS prefix) and write one triple: <code>:SpotH</code> has the label <code>\"Louka\"@cs</code>.",
+   "checks": [
+    {
+     "q": "ASK { <https://example.org/bivak#SpotH> ?p ?o }"
+    },
+    {
+     "q": "ASK { <https://example.org/bivak#SpotH> <http://www.w3.org/2000/01/rdf-schema#label> ?o }"
+    },
+    {
+     "q": "ASK { <https://example.org/bivak#SpotH> ?p \"Louka\"@cs }"
+    }
+   ],
+   "ns": {
+    "": "https://example.org/bivak#"
+   },
+   "hints": 2,
+   "notes": [
+    "important",
+    "important",
+    "pitfall",
+    "important"
+   ],
+   "terms": [
+    "triple",
+    "subject",
+    "predicate",
+    "object",
+    "prefix",
+    "IRI",
+    "namespace",
+    "language tag",
+    "literal"
+   ],
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 2,
+   "tab": "learn",
+   "part": "learn1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n:SpotH a :Spot ;\n    rdfs:label \"Louka u řeky\"@cs , \"Meadow by the river\"@en ;\n    :liesWithin :NP_Sumava .\n",
+   "taskOriginal": "Describe <code>:SpotH</code> in one block: type <code>:Spot</code>, labels <code>\"Louka u řeky\"@cs</code> and <code>\"Meadow by the river\"@en</code>, and <code>:liesWithin :NP_Sumava</code>. The prefix <code>:</code> must be exactly <code>https://example.org/bivak#</code> (already in the starter): a different address means different things, not the ones in bivak.ttl.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :SpotH a :Spot }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :SpotH rdfs:label \"Louka u řeky\"@cs }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :SpotH rdfs:label \"Meadow by the river\"@en }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :SpotH :liesWithin :NP_Sumava }"
+    }
+   ],
+   "ns": {
+    "": "https://example.org/bivak#"
+   },
+   "hints": 3,
+   "notes": [
+    "important",
+    "pitfall",
+    "pitfall"
+   ],
+   "terms": [
+    "rdf:type (a)",
+    "predicate list (;)",
+    "object list (,)",
+    "label"
+   ],
+   "origins": [
+    [
+     "rdf:type",
+     "RDF"
+    ],
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 3,
+   "tab": "learn",
+   "part": "learn1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n:Area1 :areaHa 9.1887 ;\n    :geometryChanged \"2005-01-20\"^^xsd:date ;\n    :hasOverlap false ;\n    :aopkCode \"110\" .\n",
+   "taskOriginal": "Describe <code>:Area1</code> with four value lines (numbers and booleans without quotes, strings in quotes, dates as <code>\"…\"^^xsd:date</code>): <code>:areaHa</code> 9.1887 (decimal), <code>:geometryChanged</code> the date 2005-01-20 (<code>xsd:date</code>), <code>:hasOverlap</code> false, <code>:aopkCode</code> the string <code>\"110\"</code>.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Area1 :areaHa ?a FILTER (datatype(?a) = xsd:decimal && ?a = 9.1887) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Area1 :geometryChanged ?d FILTER (datatype(?d) = xsd:date && ?d = \"2005-01-20\"^^xsd:date) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Area1 :hasOverlap ?b FILTER (datatype(?b) = xsd:boolean && !?b) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Area1 :aopkCode \"110\" }"
+    }
+   ],
+   "ns": {
+    "": "https://example.org/bivak#"
+   },
+   "hints": 4,
+   "notes": [
+    "pitfall",
+    "important",
+    "important",
+    "pitfall"
+   ],
+   "terms": [
+    "datatype",
+    "typed literal",
+    "decimal / integer / boolean / date"
+   ],
+   "origins": [
+    [
+     "xsd:decimal",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:integer",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:boolean",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:date",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:string",
+     "XML Schema datatypes"
+    ]
+   ]
+  },
+  {
+   "id": 4,
+   "tab": "learn",
+   "part": "learn1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n:Stay8 rdfs:label \"Celta u řeky\"@cs ;\n    :atSpot :SpotA ;\n    :usesShelter [ a :Tarp ] ;\n    :includesActivity [ a :Sleeping ] , [ a :FoodPreparation ] .\n",
+   "taskOriginal": "Describe <code>:Stay8</code>: label <code>\"Celta u řeky\"@cs</code>, <code>:atSpot :SpotA</code>, the shelter is a blank node of type <code>:Tarp</code>, activities are two blank nodes: <code>:Sleeping</code> and <code>:FoodPreparation</code>.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay8 :usesShelter ?s . ?s a :Tarp FILTER isBlank(?s) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay8 :includesActivity ?a . ?a a :Sleeping }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay8 :includesActivity ?a . ?a a :FoodPreparation }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay8 :atSpot :SpotA ; rdfs:label \"Celta u řeky\"@cs }"
+    }
+   ],
+   "ns": {
+    "": "https://example.org/bivak#"
+   },
+   "hints": 2,
+   "notes": [
+    "important",
+    "pitfall",
+    "pitfall"
+   ],
+   "terms": [
+    "blank node",
+    "shelter",
+    "activity"
+   ],
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 5,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?spot WHERE { ?spot a :Spot . }",
+   "taskOriginal": "List all spots (instances of <code>:Spot</code>). Column: <code>?spot</code>.",
+   "hints": 2,
+   "notes": [
+    "important",
+    "important",
+    "pitfall"
+   ],
+   "terms": [
+    "triple pattern",
+    "variable",
+    "SELECT query",
+    "WHERE clause"
+   ],
+   "origins": [
+    [
+     "rdfs:subClassOf",
+     "RDF Schema"
+    ],
+    [
+     "rdf:type",
+     "RDF"
+    ]
+   ]
+  },
+  {
+   "id": 6,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?p ?o WHERE { :SpotB ?p ?o . }",
+   "taskOriginal": "List all predicate–object pairs of <code>:SpotB</code>. Columns: <code>?p</code>, <code>?o</code>.",
+   "hints": 1,
+   "notes": [
+    "important",
+    "important"
+   ],
+   "terms": [
+    "variable in predicate position",
+    "describe a node"
+   ],
+   "origins": [
+    [
+     "rdf:type",
+     "RDF"
+    ],
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 7,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?spot ?label WHERE { ?spot a :Spot ; rdfs:label ?label . }",
+   "taskOriginal": "List all spots with all their labels. Columns: <code>?spot</code>, <code>?label</code>. (12 rows.)",
+   "hints": 1,
+   "notes": [
+    "important",
+    "important",
+    "remember",
+    "pitfall"
+   ],
+   "terms": [
+    "graph pattern",
+    "join on a variable",
+    "DISTINCT"
+   ],
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 8,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?spot ?label WHERE { ?spot a :Spot ; rdfs:label ?label . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "List only the Czech labels of the spots. Columns: <code>?spot</code>, <code>?label</code>. (6 rows.)",
+   "hints": 1,
+   "notes": [
+    "pitfall",
+    "pitfall",
+    "important"
+   ],
+   "terms": [
+    "FILTER",
+    "lang()",
+    "language-tagged literal"
+   ],
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 9,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?stay ?label WHERE { ?stay :atSpot ?spot ; rdfs:label ?label . FILTER (lang(?label) = \"cs\" && CONTAINS(?label, \"Kokoř\")) }",
+   "taskOriginal": "Find the stays whose Czech label contains \"Kokoř\". Columns: <code>?stay</code>, <code>?label</code>. (2 rows.)",
+   "hints": 2,
+   "notes": [
+    "important",
+    "pitfall",
+    "pitfall"
+   ],
+   "terms": [
+    "CONTAINS / STRSTARTS / REGEX",
+    "logical AND (&&), OR (||), NOT (!)"
+   ]
+  },
+  {
+   "id": 10,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?label ?area WHERE { ?spot a :Spot ; rdfs:label ?label . FILTER (lang(?label) = \"cs\") OPTIONAL { ?spot :liesWithin ?area . } }",
+   "taskOriginal": "List the Czech labels of the spots and, if present, the areas they directly lie in. Columns: <code>?label</code>, <code>?area</code>. <i>Pole u Kutné Hory</i> must stay in the result. <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 1,
+   "notes": [
+    "important",
+    "important",
+    "pitfall"
+   ],
+   "terms": [
+    "OPTIONAL",
+    "unbound variable"
+   ],
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 11,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?label WHERE { ?spot a :Spot ; rdfs:label ?label . FILTER (lang(?label) = \"cs\") } ORDER BY ?label LIMIT 3",
+   "taskOriginal": "List the first three Czech spot labels in alphabetical order. Column: <code>?label</code>.",
+   "hints": 1,
+   "notes": [
+    "pitfall",
+    "important",
+    "important",
+    "remember"
+   ],
+   "terms": [
+    "ORDER BY",
+    "ASC / DESC",
+    "LIMIT"
+   ],
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 12,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?spotLabel (COUNT(?stay) AS ?stays) WHERE { ?stay :atSpot ?spot . ?spot rdfs:label ?spotLabel . FILTER (lang(?spotLabel) = \"cs\") } GROUP BY ?spotLabel ORDER BY DESC(?stays) ?spotLabel",
+   "taskOriginal": "How many stays are at each spot? Columns: <code>?spotLabel</code> (Czech label), <code>?stays</code>. Order by count descending, then by label.",
+   "hints": 3,
+   "notes": [
+    "pitfall",
+    "pitfall",
+    "important",
+    "important"
+   ],
+   "terms": [
+    "aggregate",
+    "GROUP BY",
+    "COUNT, SUM, AVG, MIN, MAX",
+    "alias (AS)"
+   ],
+   "origins": [
+    [
+     "rdfs:subClassOf",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 13,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?class WHERE { ?class rdfs:subClassOf* :Activity . }",
+   "taskOriginal": "List <code>:Activity</code> and all its direct and indirect subclasses. Column: <code>?class</code>. (6 rows.)",
+   "hints": 2,
+   "notes": [
+    "important",
+    "pitfall",
+    "pitfall"
+   ],
+   "terms": [
+    "property path",
+    "sequence path (/)",
+    "zero or more (*)",
+    "subclass"
+   ],
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ],
+    [
+     "rdfs:subClassOf",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 14,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?spot ?area WHERE { ?spot a :Spot ; :liesWithin+ ?area . }",
+   "taskOriginal": "For every spot, list all areas it lies in, directly or indirectly. Columns: <code>?spot</code>, <code>?area</code>. (7 rows.) <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 1,
+   "notes": [
+    "important",
+    "pitfall",
+    "important"
+   ],
+   "terms": [
+    "transitive property",
+    "one or more (+)",
+    "lies within"
+   ],
+   "origins": [
+    [
+     "owl:TransitiveProperty",
+     "OWL"
+    ]
+   ]
+  },
+  {
+   "id": 15,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT DISTINCT ?label WHERE { ?spot a :Spot ; rdfs:label ?label ; :liesWithin+ ?area . ?area a/rdfs:subClassOf* :ProtectedArea . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "Find the spots that lie (directly or indirectly) in any protected area (<code>:ProtectedArea</code>, including its subclasses). Return the distinct Czech labels. Column: <code>?label</code>. <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 2,
+   "notes": [
+    "important",
+    "pitfall",
+    "important"
+   ],
+   "terms": [
+    "class hierarchy",
+    "subclass of",
+    "instance of"
+   ],
+   "origins": [
+    [
+     "rdf:type",
+     "RDF"
+    ],
+    [
+     "rdfs:subClassOf",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 16,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT DISTINCT ?restrictionLabel WHERE { :SpotA :liesWithin+ ?area . { ?r :appliesToArea ?area } UNION { ?area a/rdfs:subClassOf* ?type . ?r :appliesToAreaType ?type } ?r rdfs:label ?restrictionLabel . FILTER (lang(?restrictionLabel) = \"cs\") }",
+   "taskOriginal": "Which restrictions apply to the spot <code>:SpotA</code>? A <b>restriction</b> is a thing of type <code>:Restriction</code> (for example <code>:OvernightBan_CS</code>) with a name <code>rdfs:label</code> (in cs and en). It is attached to an area in one of two ways: <code>?r :appliesToArea ?area</code> (a specific area) or <code>?r :appliesToAreaType ?type</code> (a whole type of areas; the area's class or one of its superclasses). The spot's areas: <code>:SpotA :liesWithin+ ?area</code>. Return the distinct Czech restriction labels. Column: <code>?restrictionLabel</code>. <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 4,
+   "notes": [
+    "pitfall",
+    "important",
+    "important"
+   ],
+   "terms": [
+    "UNION",
+    "VALUES",
+    "restriction",
+    "applies to"
+   ],
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 17,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?stayLabel ?kind WHERE { ?stay :atSpot ?spot ; rdfs:label ?stayLabel . FILTER (lang(?stayLabel) = \"cs\") BIND (IF (EXISTS { ?stay :usesShelter/a/rdfs:subClassOf* :Tent } || EXISTS { ?stay :includesActivity/a/rdfs:subClassOf* :CampActivity }, :Camping, :Bivouacking) AS ?kind) }",
+   "taskOriginal": "Classify each stay: <code>:Camping</code> if it uses a tent (<code>:Tent</code> or subclass) or includes a <code>:CampActivity</code> (or subclass), otherwise <code>:Bivouacking</code>. Columns: <code>?stayLabel</code> (Czech), <code>?kind</code>.",
+   "hints": 2,
+   "notes": [
+    "pitfall",
+    "important",
+    "important"
+   ],
+   "terms": [
+    "BIND",
+    "IF(cond, a, b)",
+    "EXISTS",
+    "computed column"
+   ]
+  },
+  {
+   "id": 18,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT DISTINCT ?area ?label WHERE { ?area a/rdfs:subClassOf* :Area ; rdfs:label ?label . FILTER NOT EXISTS { ?area rdfs:label ?en . FILTER (lang(?en) = \"en\") } }",
+   "taskOriginal": "Which areas (type <code>:Area</code> or its subclass) have no English label? Return the distinct <code>?area</code> and <code>?label</code> (any label). <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 3,
+   "notes": [
+    "pitfall",
+    "important",
+    "important"
+   ],
+   "terms": [
+    "NOT EXISTS",
+    "missing value"
+   ],
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 19,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nASK { ?stay :usesShelter/a :Tent ; :atSpot ?spot . ?spot :liesWithin+ ?f . ?f a :Forest . }",
+   "taskOriginal": "ASK: is there a stay with a tent (<code>:Tent</code>) at a spot that lies (directly or indirectly) in a forest (<code>:Forest</code>)?",
+   "hints": 2,
+   "notes": [
+    "important",
+    "important",
+    "pitfall"
+   ],
+   "terms": [
+    "ASK query",
+    "boolean result"
+   ]
+  },
+  {
+   "id": 20,
+   "tab": "learn",
+   "part": "learn2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nCONSTRUCT { ?stay :inForest ?forest } WHERE { ?stay :atSpot ?spot . ?spot :liesWithin+ ?forest . ?forest a :Forest . }",
+   "taskOriginal": "Use CONSTRUCT to build triples <code>?stay :inForest ?forest</code> for stays whose spot lies (directly or indirectly) in a forest.",
+   "hints": 2,
+   "notes": [
+    "important",
+    "important",
+    "important"
+   ],
+   "terms": [
+    "CONSTRUCT query",
+    "graph template",
+    "new triples"
+   ]
+  },
+  {
+   "id": 21,
+   "tab": "learn",
+   "part": "learn3",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "rdfs",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?area ?label WHERE { ?area a :ProtectedArea ; rdfs:label ?label . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "<b>Turn on \"Include inferred\"</b> and list all <code>:ProtectedArea</code> areas with their Czech labels. Columns: <code>?area</code>, <code>?label</code>. (8 rows.) Try it with inference off first — the result is empty. <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 1,
+   "notes": [
+    "pitfall",
+    "important",
+    "important"
+   ],
+   "terms": [
+    "inference",
+    "reasoner",
+    "Include inferred",
+    "inferred triple"
+   ],
+   "origins": [
+    [
+     "rdfs:subClassOf",
+     "RDF Schema"
+    ],
+    [
+     "rdfs:domain",
+     "RDF Schema"
+    ],
+    [
+     "rdfs:range",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 22,
+   "tab": "learn",
+   "part": "learn3",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n:Hut a rdfs:Class ;\n    rdfs:subClassOf :Shelter ;\n    rdfs:label \"Chata\"@cs , \"Hut\"@en .\n:capacity a rdf:Property ;\n    rdfs:domain :Hut ;\n    rdfs:range xsd:integer .\n:Hut1 :capacity 6 .\n",
+   "taskOriginal": "Define class <code>:Hut</code> (subclass of <code>:Shelter</code>, labels cs \"Chata\", en \"Hut\"), property <code>:capacity</code> (domain <code>:Hut</code>, range <code>xsd:integer</code>) and the fact <code>:Hut1 :capacity 6 .</code> You also need the <code>rdf:</code> prefix.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Hut rdfs:subClassOf :Shelter }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Hut rdfs:label \"Chata\"@cs , \"Hut\"@en }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :capacity rdfs:domain :Hut }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :capacity rdfs:range xsd:integer }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Hut1 a :Shelter }",
+     "base": true,
+     "infer": "rdfs"
+    }
+   ],
+   "ns": {
+    "": "https://example.org/bivak#"
+   },
+   "hints": 2,
+   "notes": [
+    "important",
+    "pitfall",
+    "pitfall",
+    "important"
+   ],
+   "terms": [
+    "class",
+    "rdfs:subClassOf",
+    "property",
+    "rdfs:domain",
+    "rdfs:range"
+   ],
+   "origins": [
+    [
+     "rdf:Property",
+     "RDF"
+    ],
+    [
+     "rdfs:Class",
+     "RDF Schema"
+    ],
+    [
+     "rdfs:subClassOf",
+     "RDF Schema"
+    ],
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ],
+    [
+     "rdfs:domain",
+     "RDF Schema"
+    ],
+    [
+     "rdfs:range",
+     "RDF Schema"
+    ],
+    [
+     "xsd:integer",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:decimal",
+     "XML Schema datatypes"
+    ]
+   ]
+  },
+  {
+   "id": 23,
+   "tab": "learn",
+   "part": "learn3",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix sh:   <https://example.org/shelter/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n",
+   "ref": "@prefix sh:   <https://example.org/shelter/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\nsh:schema a skos:ConceptScheme ;\n    skos:hasTopConcept sh:Shelter .\nsh:Shelter a skos:Concept ;\n    skos:inScheme sh:schema ;\n    skos:topConceptOf sh:schema ;\n    skos:prefLabel \"Přístřešek\"@cs , \"Shelter\"@en ;\n    skos:narrower sh:Tent .\nsh:Tent a skos:Concept ;\n    skos:inScheme sh:schema ;\n    skos:broader sh:Shelter ;\n    skos:prefLabel \"Stan\"@cs , \"Tent\"@en ;\n    skos:altLabel \"Týpí\"@cs ;\n    skos:notation \"TENT\" ;\n    skos:definition \"Přenosný přístřešek z plachty.\"@cs .\n",
+   "taskOriginal": "Create concept scheme <code>sh:schema</code> with top concept <code>sh:Shelter</code> and concept <code>sh:Tent</code>: prefLabel \"Stan\"@cs and \"Tent\"@en, altLabel \"Týpí\"@cs, notation \"TENT\", any Czech definition, <code>broader sh:Shelter</code>, <code>inScheme</code> the scheme. <code>sh:Shelter</code> also needs cs+en prefLabel and <code>inScheme</code>.",
+   "checks": [
+    {
+     "q": "PREFIX sh: <https://example.org/shelter/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { sh:schema a skos:ConceptScheme ; skos:hasTopConcept sh:Shelter }"
+    },
+    {
+     "q": "PREFIX sh: <https://example.org/shelter/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { sh:Tent a skos:Concept ; skos:inScheme sh:schema ; skos:broader sh:Shelter }"
+    },
+    {
+     "q": "PREFIX sh: <https://example.org/shelter/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { sh:Tent skos:prefLabel \"Stan\"@cs , \"Tent\"@en }"
+    },
+    {
+     "q": "PREFIX sh: <https://example.org/shelter/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { sh:Tent skos:altLabel \"Týpí\"@cs ; skos:notation \"TENT\" ; skos:definition ?d FILTER (lang(?d) = \"cs\") }"
+    },
+    {
+     "q": "PREFIX sh: <https://example.org/shelter/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { sh:Shelter skos:inScheme sh:schema ; skos:prefLabel ?c , ?e FILTER (lang(?c) = 'cs' && lang(?e) = 'en') }"
+    }
+   ],
+   "hints": 3,
+   "notes": [
+    "important",
+    "important",
+    "pitfall",
+    "important"
+   ],
+   "terms": [
+    "concept",
+    "concept scheme",
+    "preferred label (prefLabel)",
+    "alternative label (altLabel)",
+    "notation",
+    "definition",
+    "broader / narrower",
+    "exactMatch / closeMatch",
+    "top concept"
+   ],
+   "origins": [
+    [
+     "skos:Concept",
+     "SKOS"
+    ],
+    [
+     "skos:inScheme",
+     "SKOS"
+    ],
+    [
+     "skos:broader",
+     "SKOS"
+    ],
+    [
+     "skos:prefLabel",
+     "SKOS"
+    ],
+    [
+     "skos:altLabel",
+     "SKOS"
+    ],
+    [
+     "skos:notation",
+     "SKOS"
+    ],
+    [
+     "skos:definition",
+     "SKOS"
+    ],
+    [
+     "skos:closeMatch",
+     "SKOS"
+    ],
+    [
+     "skos:ConceptScheme",
+     "SKOS"
+    ],
+    [
+     "skos:hasTopConcept",
+     "SKOS"
+    ],
+    [
+     "skos:exactMatch",
+     "SKOS"
+    ],
+    [
+     "rdfs:subClassOf",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 24,
+   "tab": "learn",
+   "part": "learn3",
+   "kind": "sparql",
+   "data": [
+    "skos"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\nSELECT ?notation WHERE { ?c skos:broader+ kat:MZCHU ; skos:notation ?notation . }",
+   "taskOriginal": "List the notations of all categories below <code>kat:MZCHU</code> (small-scale areas), but not <code>kat:MZCHU</code> itself. Column: <code>?notation</code>.",
+   "hints": 2,
+   "notes": [
+    "pitfall",
+    "important",
+    "important"
+   ],
+   "terms": [
+    "broader",
+    "narrower",
+    "hierarchy"
+   ],
+   "origins": [
+    [
+     "skos:broader",
+     "SKOS"
+    ],
+    [
+     "rdfs:subClassOf",
+     "RDF Schema"
+    ],
+    [
+     "skos:notation",
+     "SKOS"
+    ]
+   ]
+  },
+  {
+   "id": 25,
+   "tab": "learn",
+   "part": "learn3",
+   "kind": "sparql",
+   "data": [
+    "skos"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\nSELECT ?notation WHERE { ?c skos:inScheme iucn:schema ; skos:notation ?notation . FILTER NOT EXISTS { ?c skos:definition ?d } }",
+   "taskOriginal": "Which concepts of <code>iucn:schema</code> have no <code>skos:definition</code>? Return their notations. Column: <code>?notation</code>.",
+   "hints": 2,
+   "notes": [
+    "important",
+    "important",
+    "important"
+   ],
+   "terms": [
+    "quality check",
+    "missing definition"
+   ],
+   "origins": [
+    [
+     "skos:exactMatch",
+     "SKOS"
+    ],
+    [
+     "skos:inScheme",
+     "SKOS"
+    ],
+    [
+     "skos:notation",
+     "SKOS"
+    ],
+    [
+     "skos:prefLabel",
+     "SKOS"
+    ],
+    [
+     "skos:definition",
+     "SKOS"
+    ]
+   ]
+  },
+  {
+   "id": 26,
+   "tab": "learn",
+   "part": "learn4",
+   "kind": "rml",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n:Sample a rml:TriplesMap ;\n    rml:logicalSource [\n        rml:source \"mzchu-sample.csv\" ;\n        rml:referenceFormulation rml:CSV ] ;\n    rml:subjectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}\" ] ;\n    # your predicateObjectMap\n    .\n",
+   "ref": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n:Sample a rml:TriplesMap ;\n    rml:logicalSource [\n        rml:source \"mzchu-sample.csv\" ;\n        rml:referenceFormulation rml:CSV ] ;\n    rml:subjectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}\" ] ;\n    rml:predicateObjectMap [\n        rml:predicate rdfs:label ;\n        rml:objectMap [ rml:reference \"NAZEV\" ; rml:language \"cs\" ] ] .\n",
+   "taskOriginal": "The source and subject are given. Add one predicate-object pair: <code>rdfs:label</code> from column NAZEV with language <code>cs</code>. Expect 4 triples.",
+   "hints": 1,
+   "notes": [
+    "important",
+    "important",
+    "pitfall",
+    "important"
+   ],
+   "terms": [
+    "mapping",
+    "TriplesMap",
+    "logicalSource",
+    "subjectMap",
+    "predicateObjectMap",
+    "template",
+    "reference",
+    "CSV column"
+   ],
+   "origins": [
+    [
+     "rml:TriplesMap",
+     "RML"
+    ],
+    [
+     "rml:logicalSource",
+     "RML"
+    ],
+    [
+     "rml:source",
+     "RML"
+    ],
+    [
+     "rml:referenceFormulation",
+     "RML"
+    ],
+    [
+     "rml:CSV",
+     "RML"
+    ],
+    [
+     "rml:subjectMap",
+     "RML"
+    ],
+    [
+     "rml:template",
+     "RML"
+    ],
+    [
+     "rml:predicateObjectMap",
+     "RML"
+    ],
+    [
+     "rml:predicate",
+     "RML"
+    ],
+    [
+     "rml:objectMap",
+     "RML"
+    ],
+    [
+     "rml:reference",
+     "RML"
+    ],
+    [
+     "rml:language",
+     "RML"
+    ],
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 27,
+   "tab": "learn",
+   "part": "learn4",
+   "kind": "rml",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n:Sample a rml:TriplesMap ;\n    rml:logicalSource [\n        rml:source \"mzchu-sample.csv\" ;\n        rml:referenceFormulation rml:CSV ] ;\n    rml:subjectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}\" ] ;\n    rml:predicateObjectMap [\n        rml:predicate rdfs:label ;\n        rml:objectMap [ rml:reference \"NAZEV\" ; rml:language \"cs\" ] ] ;\n    # add more predicateObjectMap blocks (the last one ends with a full stop)\n    .\n",
+   "ref": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n:Sample a rml:TriplesMap ;\n    rml:logicalSource [\n        rml:source \"mzchu-sample.csv\" ;\n        rml:referenceFormulation rml:CSV ] ;\n    rml:subjectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}\" ] ;\n    rml:predicateObjectMap [\n        rml:predicate rdfs:label ;\n        rml:objectMap [ rml:reference \"NAZEV\" ; rml:language \"cs\" ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:areaHa ;\n        rml:objectMap [ rml:reference \"ROZL\" ; rml:datatype xsd:decimal ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:category ;\n        rml:objectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak/kategorie/{KAT}\" ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:hasOverlap ;\n        rml:objectMap [ rml:reference \"PREKRYV\" ; rml:datatype xsd:boolean ] ] .\n",
+   "taskOriginal": "The label is given. Add: <code>bv:areaHa</code> from ROZL (<code>xsd:decimal</code>); <code>bv:category</code> as the IRI <code>https://kbss.fel.cvut.cz/bivak/kategorie/{KAT}</code>; <code>bv:hasOverlap</code> from PREKRYV (<code>xsd:boolean</code>). 16 triples in total.",
+   "hints": 2,
+   "notes": [
+    "pitfall",
+    "pitfall",
+    "important"
+   ],
+   "terms": [
+    "datatype",
+    "template (→ IRI)",
+    "reference (→ literal)",
+    "language"
+   ],
+   "origins": [
+    [
+     "rml:reference",
+     "RML"
+    ],
+    [
+     "rml:template",
+     "RML"
+    ],
+    [
+     "rml:datatype",
+     "RML"
+    ],
+    [
+     "rml:language",
+     "RML"
+    ],
+    [
+     "rml:constant",
+     "RML"
+    ],
+    [
+     "rml:objectMap",
+     "RML"
+    ],
+    [
+     "xsd:integer",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:date",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:boolean",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:decimal",
+     "XML Schema datatypes"
+    ],
+    [
+     "rml:TriplesMap",
+     "RML"
+    ],
+    [
+     "rml:logicalSource",
+     "RML"
+    ],
+    [
+     "rml:source",
+     "RML"
+    ],
+    [
+     "rml:referenceFormulation",
+     "RML"
+    ],
+    [
+     "rml:CSV",
+     "RML"
+    ],
+    [
+     "rml:subjectMap",
+     "RML"
+    ],
+    [
+     "rml:predicateObjectMap",
+     "RML"
+    ],
+    [
+     "rml:predicate",
+     "RML"
+    ],
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 28,
+   "tab": "learn",
+   "part": "learn4",
+   "kind": "rml",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n",
+   "ref": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n:Sample a rml:TriplesMap ;\n    rml:logicalSource [\n        rml:source \"mzchu-sample.csv\" ;\n        rml:referenceFormulation rml:CSV ] ;\n    rml:subjectMap [\n        rml:template \"https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}\" ;\n        rml:class bv:NationalNatureMonument ] ;\n    rml:predicateObjectMap [\n        rml:predicate rdfs:comment ;\n        rml:objectMap [ rml:template \"Kód AOPK: {KOD}\" ; rml:termType rml:Literal ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:iucnCategory ;\n        rml:objectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak/iucn/{IUCN}\" ] ] .\n",
+   "taskOriginal": "Write a mapping from scratch for <code>mzchu-sample.csv</code>: subject IRI <code>https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}</code> with class <code>bv:NationalNatureMonument</code>; <code>rdfs:comment</code> as a literal built from the template <code>\"Kód AOPK: {KOD}\"</code> (no language); <code>bv:iucnCategory</code> as the IRI <code>https://kbss.fel.cvut.cz/bivak/iucn/{IUCN}</code>. 12 triples.",
+   "hints": 3,
+   "notes": [
+    "important",
+    "pitfall",
+    "important"
+   ],
+   "terms": [
+    "termType",
+    "rml:Literal / rml:IRI",
+    "rml:class"
+   ],
+   "origins": [
+    [
+     "rml:termType",
+     "RML"
+    ],
+    [
+     "rml:Literal",
+     "RML"
+    ],
+    [
+     "rml:objectMap",
+     "RML"
+    ],
+    [
+     "rml:template",
+     "RML"
+    ],
+    [
+     "rml:language",
+     "RML"
+    ],
+    [
+     "rml:class",
+     "RML"
+    ],
+    [
+     "rml:subjectMap",
+     "RML"
+    ],
+    [
+     "rml:IRI",
+     "RML"
+    ],
+    [
+     "rml:TriplesMap",
+     "RML"
+    ],
+    [
+     "rdfs:comment",
+     "RDF Schema"
+    ],
+    [
+     "rdf:type",
+     "RDF"
+    ]
+   ]
+  },
+  {
+   "id": 29,
+   "tab": "exam",
+   "part": "exam1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": true,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT ?label\nWHERE {\n  ?class rdfs:subClassOf :Shelter ;\n         rdfs:label ?label .\n  FILTER (lang(?label) = \"cs\")\n}\nORDER BY ?label\n",
+   "taskOriginal": "List the Czech labels (<code>rdfs:label</code> with <code>@cs</code>) of all classes that are direct subclasses of <code>:Shelter</code>, in alphabetical order. Column: <code>?label</code>.",
+   "hints": 0,
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 30,
+   "tab": "exam",
+   "part": "exam1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": true,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT ?label\nWHERE {\n  ?spot a :Spot ;\n        rdfs:label ?label .\n  FILTER (lang(?label) = \"cs\")\n  FILTER NOT EXISTS { ?spot :liesWithin ?area }\n}\n",
+   "taskOriginal": "Which spots (<code>:Spot</code>) do not lie (<code>:liesWithin</code>) in any area? Return their Czech labels. Column: <code>?label</code>. <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 0
+  },
+  {
+   "id": 31,
+   "tab": "exam",
+   "part": "exam1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": true,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT ?label (COUNT(?act) AS ?activities)\nWHERE {\n  ?stay :includesActivity ?act ;\n        rdfs:label ?label .\n  FILTER (lang(?label) = \"cs\")\n}\nGROUP BY ?label\nORDER BY DESC(?activities) ?label\n",
+   "taskOriginal": "How many activities (<code>:includesActivity</code>) does each stay (<code>:Stay</code>) include? Columns: <code>?label</code> (Czech label of the stay) and <code>?activities</code> (count). Order by count descending, then by label.",
+   "hints": 0
+  },
+  {
+   "id": 32,
+   "tab": "exam",
+   "part": "exam1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": true,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nSELECT ?label (COUNT(DISTINCT ?area) AS ?areas)\nWHERE {\n  ?spot a :Spot ;\n        rdfs:label ?label .\n  FILTER (lang(?label) = \"cs\")\n  OPTIONAL { ?spot :liesWithin+ ?area }\n}\nGROUP BY ?label\nORDER BY DESC(?areas) ?label\n",
+   "taskOriginal": "For every spot (<code>:Spot</code>), return the number of areas it lies in, directly or indirectly (<code>:liesWithin</code>, transitively). Spots without any area must appear with 0. Columns: <code>?label</code> (Czech label), <code>?areas</code>. Order by count descending, then by label. <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 0
+  },
+  {
+   "id": 33,
+   "tab": "exam",
+   "part": "exam1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": true,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\nCONSTRUCT { ?spot :inForest ?forest }\nWHERE {\n  ?spot a :Spot ;\n        :liesWithin+ ?forest .\n  ?forest a :Forest .\n}\n",
+   "taskOriginal": "Use a CONSTRUCT query to build a graph in which every spot (<code>:Spot</code>) lying (<code>:liesWithin</code>, directly or indirectly) in a forest (<code>:Forest</code>) is linked to that forest by a new property <code>:inForest</code>. <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 0
+  },
+  {
+   "id": 34,
+   "tab": "exam",
+   "part": "exam1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": true,
+   "starter": "",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n:SpotG a :Spot ;\n    rdfs:label \"Louka u Sázavy\"@cs , \"Meadow by the Sázava\"@en ;\n    :liesWithin :Forest_Pelhrimov .\n\n:Stay7 rdfs:label \"Hamaka a oheň u Sázavy\"@cs ;\n    :atSpot :SpotG ;\n    :usesShelter [ a :Hammock ] ;\n    :includesActivity [ a :Sleeping ] , [ a :MakingFire ] .\n",
+   "taskOriginal": "Write Turtle (with your own <code>@prefix</code> lines) to add to bivak.ttl: a new spot <code>:SpotG</code> of type <code>:Spot</code>, labels <code>\"Louka u Sázavy\"@cs</code> and <code>\"Meadow by the Sázava\"@en</code>, lying in <code>:Forest_Pelhrimov</code>; a stay <code>:Stay7</code> labelled <code>\"Hamaka a oheň u Sázavy\"@cs</code>, at <code>:SpotG</code>, using a shelter of type <code>:Hammock</code> (blank node), including activities <code>:Sleeping</code> and <code>:MakingFire</code> (both blank nodes). The Camping/Bivouacking classification must put <code>:Stay7</code> into <code>:Camping</code>.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :SpotG a :Spot ; rdfs:label \"Louka u Sázavy\"@cs , \"Meadow by the Sázava\"@en ; :liesWithin :Forest_Pelhrimov }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay7 rdfs:label \"Hamaka a oheň u Sázavy\"@cs ; :atSpot :SpotG }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay7 :usesShelter ?s . ?s a :Hammock FILTER isBlank(?s) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay7 :includesActivity ?a . ?a a :Sleeping }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay7 :includesActivity ?a . ?a a :MakingFire }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay7 :includesActivity/a/rdfs:subClassOf* :CampActivity }",
+     "base": true
+    }
+   ],
+   "ns": {
+    "": "https://example.org/bivak#"
+   },
+   "hints": 0
+  },
+  {
+   "id": 35,
+   "tab": "exam",
+   "part": "exam1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": true,
+   "starter": "",
+   "ref": "@prefix act:  <https://example.org/act/> .\n@prefix bv:   <https://example.org/bivak#> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\n# --- (a) SKOS ---\nact:schema a skos:ConceptScheme ;\n    skos:prefLabel \"Typy činností\"@cs , \"Activity types\"@en ;\n    skos:hasTopConcept act:Camp .\n\nact:Camp a skos:Concept ;\n    skos:inScheme act:schema ;\n    skos:topConceptOf act:schema ;\n    skos:prefLabel \"Táborová činnost\"@cs , \"Camp activity\"@en ;\n    skos:notation \"CAMP\" ;\n    skos:narrower act:Cooking , act:Fire .\n\nact:Cooking a skos:Concept ;\n    skos:inScheme act:schema ;\n    skos:broader act:Camp ;\n    skos:prefLabel \"Vaření\"@cs , \"Cooking\"@en ;\n    skos:altLabel \"Příprava jídla\"@cs ;\n    skos:notation \"COOK\" ;\n    skos:definition \"Příprava teplého jídla na místě pobytu.\"@cs .\n\nact:Fire a skos:Concept ;\n    skos:inScheme act:schema ;\n    skos:broader act:Camp ;\n    skos:prefLabel \"Oheň\"@cs , \"Fire\"@en ;\n    skos:notation \"FIRE\" ;\n    skos:definition \"Rozdělávání a udržování ohně.\"@cs .\n\n# --- (b) RDFS ---\nbv:Hut a rdfs:Class ;\n    rdfs:subClassOf bv:Shelter ;\n    rdfs:label \"Chata\"@cs , \"Hut\"@en .\n\nbv:capacity a rdf:Property ;\n    rdfs:label \"kapacita\"@cs , \"capacity\"@en ;\n    rdfs:domain bv:Hut ;\n    rdfs:range xsd:integer .\n\nbv:Hut1 bv:capacity 6 .\n",
+   "taskOriginal": "(a) SKOS: a concept scheme \"Typy činností\"/\"Activity types\" with top concept \"Táborová činnost\"/\"Camp activity\" and two narrower concepts \"Vaření\"/\"Cooking\" (altLabel \"Příprava jídla\"@cs) and \"Oheň\"/\"Fire\". Every concept has <code>inScheme</code> and cs+en <code>prefLabel</code>; the narrower ones also <code>broader</code>, <code>notation</code>, Czech <code>definition</code>. Your own IRIs. (b) RDFS: class <code>bv:Hut</code> (cs \"Chata\", en \"Hut\"), subclass of <code>bv:Shelter</code> (<code>bv:</code> = <code>https://example.org/bivak#</code>); property <code>bv:capacity</code> with domain <code>bv:Hut</code> and range <code>xsd:integer</code>; fact <code>bv:Hut1 bv:capacity 6 .</code> With RDFS inference <code>bv:Hut1</code> must get type <code>bv:Shelter</code>.",
+   "checks": [
+    {
+     "q": "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?s a skos:ConceptScheme ; skos:hasTopConcept ?t }"
+    },
+    {
+     "q": "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { { SELECT (COUNT(*) AS ?n) WHERE { ?c skos:broader ?b } } FILTER (?n >= 2) }"
+    },
+    {
+     "q": "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?x a skos:Concept FILTER NOT EXISTS { ?c a skos:Concept FILTER NOT EXISTS { ?c skos:prefLabel ?l FILTER (lang(?l) = 'cs') } } }"
+    },
+    {
+     "q": "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?x a skos:Concept FILTER NOT EXISTS { ?c a skos:Concept FILTER NOT EXISTS { ?c skos:prefLabel ?l FILTER (lang(?l) = 'en') } } }"
+    },
+    {
+     "q": "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?c skos:altLabel \"Příprava jídla\"@cs }"
+    },
+    {
+     "q": "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?c skos:broader ?b ; skos:notation ?n ; skos:definition ?d }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Hut rdfs:subClassOf :Shelter }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Hut rdfs:label \"Chata\"@cs , \"Hut\"@en }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :capacity rdfs:domain :Hut ; rdfs:range xsd:integer }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Hut1 a :Shelter }",
+     "base": true,
+     "infer": "rdfs"
+    }
+   ],
+   "hints": 0,
+   "origins": [
+    [
+     "xsd:integer",
+     "XML Schema datatypes"
+    ]
+   ]
+  },
+  {
+   "id": 36,
+   "tab": "exam",
+   "part": "exam1",
+   "kind": "rml",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": true,
+   "starter": "",
+   "ref": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n:Sample a rml:TriplesMap ;\n    rml:logicalSource [\n        rml:source \"mzchu-sample.csv\" ;\n        rml:referenceFormulation rml:CSV ] ;\n    rml:subjectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}\" ] ;\n    rml:predicateObjectMap [\n        rml:predicate rdfs:label ;\n        rml:objectMap [ rml:reference \"NAZEV\" ; rml:language \"cs\" ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:areaHa ;\n        rml:objectMap [ rml:reference \"ROZL\" ; rml:datatype xsd:decimal ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:category ;\n        rml:objectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak/kategorie/{KAT}\" ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:hasOverlap ;\n        rml:objectMap [ rml:reference \"PREKRYV\" ; rml:datatype xsd:boolean ] ] .\n",
+   "taskOriginal": "For <code>mzchu-sample.csv</code> (columns KOD, KAT, NAZEV, ROZL, IUCN, ZMENA_G, PREKRYV) write an RML mapping (Morph-KGC): resource <code>https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}</code> with <code>rdfs:label</code> from NAZEV (language cs); <code>bv:areaHa</code> from ROZL (<code>xsd:decimal</code>); <code>bv:category</code> as the IRI <code>https://kbss.fel.cvut.cz/bivak/kategorie/{KAT}</code>; <code>bv:hasOverlap</code> from PREKRYV (<code>xsd:boolean</code>). <code>bv:</code> = <code>https://kbss.fel.cvut.cz/bivak#</code>, source <code>\"mzchu-sample.csv\"</code>. Expect 16 triples.",
+   "hints": 0,
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ],
+    [
+     "xsd:decimal",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:boolean",
+     "XML Schema datatypes"
+    ]
+   ]
+  },
+  {
+   "id": 37,
+   "tab": "sparql",
+   "part": "sparql1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?name WHERE { ?p a :NationalPark ; rdfs:label ?name . FILTER (lang(?name) = \"cs\") } ORDER BY ?name",
+   "taskOriginal": "List the Czech names of all national parks (<code>:NationalPark</code>) in alphabetical order. Column: <code>?name</code>.",
+   "hints": 2
+  },
+  {
+   "id": 38,
+   "tab": "sparql",
+   "part": "sparql1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?source ?label WHERE { ?source a :LegalSource ; rdfs:label ?label . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "List all legal sources (<code>:LegalSource</code>) with their Czech labels. Columns: <code>?source</code>, <code>?label</code>.",
+   "hints": 1
+  },
+  {
+   "id": 39,
+   "tab": "sparql",
+   "part": "sparql1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?class ?comment WHERE { ?class a rdfs:Class ; rdfs:comment ?comment . }",
+   "taskOriginal": "Which classes have a comment (<code>rdfs:comment</code>)? Return the class and the comment text. Columns: <code>?class</code>, <code>?comment</code>.",
+   "hints": 1,
+   "origins": [
+    [
+     "rdfs:comment",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 40,
+   "tab": "sparql",
+   "part": "sparql1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?label WHERE { ?stay :atSpot :SpotB ; rdfs:label ?label . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "Which stays took place at the spot <code>:SpotB</code>? Return their Czech labels. Column: <code>?label</code>.",
+   "hints": 1
+  },
+  {
+   "id": 41,
+   "tab": "sparql",
+   "part": "sparql1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?spot ?label WHERE { ?spot a :Spot ; rdfs:label ?label . FILTER (lang(?label) = \"cs\" && STRSTARTS(?label, \"Louka\")) }",
+   "taskOriginal": "Find the spots whose Czech label starts with the word \"Louka\". Columns: <code>?spot</code>, <code>?label</code>.",
+   "hints": 1
+  },
+  {
+   "id": 42,
+   "tab": "sparql",
+   "part": "sparql1",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT DISTINCT ?label WHERE { ?a a/rdfs:subClassOf* :Area ; rdfs:label ?label . FILTER (lang(?label) = \"cs\" && (STRSTARTS(?label, \"CHKO\") || STRSTARTS(?label, \"NPR\"))) } ORDER BY ?label",
+   "taskOriginal": "Find areas whose Czech label starts with \"CHKO\" <b>or</b> \"NPR\". Return the distinct labels in alphabetical order. Column: <code>?label</code>. (An area is a thing of type <code>:Area</code> or a subclass.) <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 2
+  },
+  {
+   "id": 43,
+   "tab": "sparql",
+   "part": "sparql2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?restriction ?source WHERE { ?r a :Restriction ; rdfs:label ?restriction ; :definedIn ?s . ?s rdfs:label ?source . FILTER (lang(?restriction) = \"cs\" && lang(?source) = \"cs\") }",
+   "taskOriginal": "For every restriction (<code>:Restriction</code>) return its Czech label and the Czech label of its legal source (<code>:definedIn</code>). Columns: <code>?restriction</code>, <code>?source</code>.",
+   "hints": 1
+  },
+  {
+   "id": 44,
+   "tab": "sparql",
+   "part": "sparql2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?label WHERE { ?spot a :Spot ; rdfs:label ?label . FILTER (lang(?label) = \"cs\") FILTER NOT EXISTS { ?stay :atSpot ?spot } }",
+   "taskOriginal": "Which spots (<code>:Spot</code>) have no stay at all (<code>:atSpot</code>)? Return their Czech labels. Column: <code>?label</code>.",
+   "hints": 1
+  },
+  {
+   "id": 45,
+   "tab": "sparql",
+   "part": "sparql2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?r ?area WHERE { ?r a :Restriction . OPTIONAL { ?r :appliesToArea ?area } }",
+   "taskOriginal": "Return all restrictions and, if a restriction is attached to a <b>specific</b> area (<code>:appliesToArea</code>), that area. Restrictions without it must stay in the result. Columns: <code>?r</code>, <code>?area</code>. <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 1
+  },
+  {
+   "id": 46,
+   "tab": "sparql",
+   "part": "sparql2",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?label WHERE { ?stay rdfs:label ?label ; :includesActivity/a :FoodPreparation . FILTER (lang(?label) = \"cs\") FILTER NOT EXISTS { ?stay :includesActivity/a :Hygiene } }",
+   "taskOriginal": "Which stays include food preparation (<code>:FoodPreparation</code>) but do <b>not</b> include hygiene (<code>:Hygiene</code>)? Return the Czech labels. Column: <code>?label</code>.",
+   "hints": 2
+  },
+  {
+   "id": 47,
+   "tab": "sparql",
+   "part": "sparql3",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT (COUNT(?spot) AS ?count) WHERE { ?spot a :Spot . }",
+   "taskOriginal": "How many spots (<code>:Spot</code>) are there in total? One column: <code>?count</code>.",
+   "hints": 1
+  },
+  {
+   "id": 48,
+   "tab": "sparql",
+   "part": "sparql3",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?activity (COUNT(?r) AS ?n) WHERE { ?r a :Restriction ; :prohibits ?activity . } GROUP BY ?activity ORDER BY DESC(?n) ?activity",
+   "taskOriginal": "How many restrictions (<code>:Restriction</code>) prohibit each kind (<code>:prohibits</code>)? Columns: <code>?activity</code>, <code>?n</code>. Order by count descending, then by <code>?activity</code>.",
+   "hints": 1
+  },
+  {
+   "id": 49,
+   "tab": "sparql",
+   "part": "sparql3",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?type (COUNT(?stay) AS ?n) WHERE { ?stay :usesShelter/a ?type . } GROUP BY ?type ORDER BY DESC(?n) ?type",
+   "taskOriginal": "How many stays use a shelter of each type? Columns: <code>?type</code>, <code>?n</code>. Order by count descending, then by <code>?type</code>. (Inference off.)",
+   "hints": 1
+  },
+  {
+   "id": 50,
+   "tab": "sparql",
+   "part": "sparql4",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?class WHERE { ?class rdfs:subClassOf* :OvernightStay . }",
+   "taskOriginal": "List <code>:OvernightStay</code> and all its direct and indirect subclasses. Column: <code>?class</code>.",
+   "hints": 1
+  },
+  {
+   "id": 51,
+   "tab": "sparql",
+   "part": "sparql4",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?label WHERE { ?spot a :Spot ; rdfs:label ?label ; :liesWithin+ :CHKO_Kokorinsko . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "Which spots (<code>:Spot</code>) lie (directly or through another area) in <code>:CHKO_Kokorinsko</code>? Return their Czech labels. Column: <code>?label</code>. <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 1
+  },
+  {
+   "id": 52,
+   "tab": "sparql",
+   "part": "sparql4",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?label WHERE { :SpotB ^:atSpot ?stay . ?stay rdfs:label ?label . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "Return the Czech labels of stays at <code>:SpotB</code>, but <b>write the link with the inverse path</b> <code>^:atSpot</code> (spot → stay). Column: <code>?label</code>.",
+   "hints": 1
+  },
+  {
+   "id": 53,
+   "tab": "sparql",
+   "part": "sparql4",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?r ?target WHERE { ?r :appliesToArea|:appliesToAreaType ?target . }",
+   "taskOriginal": "What is each restriction attached to — an area (<code>:appliesToArea</code>) or an area type (<code>:appliesToAreaType</code>)? Use the path <code>|</code>. Columns: <code>?r</code>, <code>?target</code>. (5 rows.) <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 1
+  },
+  {
+   "id": 54,
+   "tab": "sparql",
+   "part": "sparql5",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?spot ?label WHERE { VALUES ?spot { :SpotA :SpotD } ?spot rdfs:label ?label . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "Using <code>VALUES</code>, return the Czech labels of the spots <code>:SpotA</code> and <code>:SpotD</code>. Columns: <code>?spot</code>, <code>?label</code>.",
+   "hints": 1
+  },
+  {
+   "id": 55,
+   "tab": "sparql",
+   "part": "sparql5",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?label WHERE { { ?a a :Forest } UNION { ?a a :ProtectedLandscapeArea } ?a rdfs:label ?label . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "Using <code>UNION</code>, return the Czech labels of all forests (<code>:Forest</code>) <b>and</b> all CHKO (<code>:ProtectedLandscapeArea</code>). Column: <code>?label</code>. (5 rows.)",
+   "hints": 1
+  },
+  {
+   "id": 56,
+   "tab": "sparql",
+   "part": "sparql5",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?title WHERE { ?p a :NationalPark ; rdfs:label ?name . FILTER (lang(?name) = \"cs\") BIND (CONCAT(\"NP: \", STR(?name)) AS ?title) }",
+   "taskOriginal": "For every national park return a string like \"NP: &lt;Czech label&gt;\". Column: <code>?title</code>. Use <code>BIND</code> and <code>CONCAT</code>.",
+   "hints": 1
+  },
+  {
+   "id": 57,
+   "tab": "sparql",
+   "part": "sparql5",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nSELECT ?label ?hygiene WHERE { ?stay :atSpot ?spot ; rdfs:label ?label . FILTER (lang(?label) = \"cs\") BIND (IF (EXISTS { ?stay :includesActivity/a :Hygiene }, \"yes\", \"no\") AS ?hygiene) }",
+   "taskOriginal": "For every stay return its Czech label and the word <code>\"yes\"</code> if it includes hygiene (<code>:Hygiene</code>), otherwise <code>\"no\"</code>. Columns: <code>?label</code>, <code>?hygiene</code>.",
+   "hints": 1
+  },
+  {
+   "id": 58,
+   "tab": "sparql",
+   "part": "sparql6",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nASK { :Bivouacking rdfs:subClassOf* ?kind . ?r :prohibits ?kind . }",
+   "taskOriginal": "ASK: does any restriction (<code>:prohibits</code>) prohibit <code>:Bivouacking</code> <b>or any of its superclasses</b>?",
+   "hints": 1
+  },
+  {
+   "id": 59,
+   "tab": "sparql",
+   "part": "sparql6",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nASK { ?r :definedIn :VisitRules_CS ; :appliesToAreaType ?t . }",
+   "taskOriginal": "ASK: is there a restriction defined in <code>:VisitRules_CS</code> (<code>:definedIn</code>) that is attached to an area <b>type</b> (<code>:appliesToAreaType</code>)? <div class=\"small\"><b>An area</b> is a thing of type <code>:Area</code> or one of its subclasses: a national park, CHKO, NPR or forest (for example <code>:NP_Sumava</code>, <code>:CHKO_Kokorinsko</code>, <code>:Forest_Pelhrimov</code>). A spot is linked to it by <code>:liesWithin</code>: <code>:SpotA :liesWithin :NP_CeskeSvycarsko</code>. A spot that \"lies in no area\" simply has no <code>:liesWithin</code> triple at all.</div>",
+   "hints": 1
+  },
+  {
+   "id": 60,
+   "tab": "sparql",
+   "part": "sparql6",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nCONSTRUCT { ?stay :isCampingStay true } WHERE { ?stay :usesShelter/a :Tent . }",
+   "taskOriginal": "CONSTRUCT: for every stay that uses a tent (<code>:Tent</code>), build the triple <code>?stay :isCampingStay true</code>.",
+   "hints": 1
+  },
+  {
+   "id": 61,
+   "tab": "sparql",
+   "part": "sparql6",
+   "kind": "sparql",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nCONSTRUCT { ?spot :nameCs ?label } WHERE { ?spot a :Spot ; rdfs:label ?label . FILTER (lang(?label) = \"cs\") }",
+   "taskOriginal": "CONSTRUCT: for every spot build the triple <code>?spot :nameCs ?label</code> with its <b>Czech</b> label.",
+   "hints": 1
+  },
+  {
+   "id": 62,
+   "tab": "sparql",
+   "part": "sparql7",
+   "kind": "sparql",
+   "data": [
+    "skos"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\nPREFIX optyp: <https://example.org/bivak/typ-op/>\nSELECT ?notation WHERE { ?c skos:inScheme optyp:schema ; skos:notation ?notation . }",
+   "taskOriginal": "List the codes (<code>skos:notation</code>) of all concepts of the vocabulary <code>optyp:schema</code>. Column: <code>?notation</code>.",
+   "hints": 1,
+   "origins": [
+    [
+     "skos:notation",
+     "SKOS"
+    ]
+   ]
+  },
+  {
+   "id": 63,
+   "tab": "sparql",
+   "part": "sparql7",
+   "kind": "sparql",
+   "data": [
+    "skos"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\nSELECT ?label WHERE { ?c skos:notation \"NP\" ; skos:prefLabel ?label . FILTER (lang(?label) = \"en\") }",
+   "taskOriginal": "What is the English main label (<code>skos:prefLabel</code>) of the concept with the code <code>\"NP\"</code> (<code>skos:notation</code>)? Column: <code>?label</code>.",
+   "hints": 1,
+   "origins": [
+    [
+     "skos:prefLabel",
+     "SKOS"
+    ],
+    [
+     "skos:notation",
+     "SKOS"
+    ]
+   ]
+  },
+  {
+   "id": 64,
+   "tab": "sparql",
+   "part": "sparql7",
+   "kind": "sparql",
+   "data": [
+    "skos"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\n\n",
+   "ref": "PREFIX :     <https://example.org/bivak#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\nPREFIX kat:  <https://example.org/bivak/kategorie/>\nPREFIX iucn: <https://example.org/bivak/iucn/>\nSELECT ?notation ?target WHERE { ?c skos:inScheme kat:schema ; skos:notation ?notation ; skos:closeMatch ?target . }",
+   "taskOriginal": "Which concepts of the vocabulary <code>kat:schema</code> have a \"nearly the same\" concept in another vocabulary (<code>skos:closeMatch</code>)? Return the code and the target. Columns: <code>?notation</code>, <code>?target</code>.",
+   "hints": 1,
+   "origins": [
+    [
+     "skos:closeMatch",
+     "SKOS"
+    ]
+   ]
+  },
+  {
+   "id": 65,
+   "tab": "rdf",
+   "part": "rdf1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n:NP_Novy a :NationalPark ;\n    rdfs:label \"Národní park Nový\"@cs , \"New National Park\"@en .\n:SpotX a :Spot ;\n    :liesWithin :NP_Novy .\n",
+   "taskOriginal": "Add the national park <code>:NP_Novy</code> (type <code>:NationalPark</code>) with labels <code>\"Národní park Nový\"@cs</code> and <code>\"New National Park\"@en</code> and a spot <code>:SpotX</code> (type <code>:Spot</code>) that lies (<code>:liesWithin</code>) in that park. The prefixes are in the starter.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :NP_Novy a :NationalPark ; rdfs:label \"Národní park Nový\"@cs , \"New National Park\"@en }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :SpotX a :Spot ; :liesWithin :NP_Novy }"
+    }
+   ],
+   "hints": 2
+  },
+  {
+   "id": 66,
+   "tab": "rdf",
+   "part": "rdf1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n:FireBan a :Restriction ;\n    rdfs:label \"Zákaz ohně\"@cs , \"Fire ban\"@en ;\n    :prohibits :MakingFire ;\n    :appliesToAreaType :Forest ;\n    :definedIn :Act289_1995 .\n",
+   "taskOriginal": "Describe the restriction <code>:FireBan</code>: type <code>:Restriction</code>, labels <code>\"Zákaz ohně\"@cs</code> and <code>\"Fire ban\"@en</code>, <code>:prohibits :MakingFire</code>, <code>:appliesToAreaType :Forest</code>, <code>:definedIn :Act289_1995</code>.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :FireBan a :Restriction ; rdfs:label \"Zákaz ohně\"@cs , \"Fire ban\"@en }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :FireBan :prohibits :MakingFire }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :FireBan :appliesToAreaType :Forest }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :FireBan :definedIn :Act289_1995 }"
+    }
+   ],
+   "hints": 1
+  },
+  {
+   "id": 67,
+   "tab": "rdf",
+   "part": "rdf1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n:Stay9 rdfs:label \"Bivak na pasece\"@cs ;\n    :atSpot :SpotC ;\n    :usesShelter [ a :BivySack ] ;\n    :includesActivity [ a :Sleeping ] , [ a :Hygiene ] .\n",
+   "taskOriginal": "Describe the stay <code>:Stay9</code>: label <code>\"Bivak na pasece\"@cs</code>, <code>:atSpot :SpotC</code>, the shelter is a blank node of type <code>:BivySack</code>, activities are two blank nodes: <code>:Sleeping</code> and <code>:Hygiene</code>.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay9 rdfs:label \"Bivak na pasece\"@cs ; :atSpot :SpotC }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay9 :usesShelter ?s . ?s a :BivySack FILTER isBlank(?s) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay9 :includesActivity ?a . ?a a :Sleeping }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay9 :includesActivity ?a . ?a a :Hygiene }"
+    }
+   ],
+   "hints": 1
+  },
+  {
+   "id": 68,
+   "tab": "rdf",
+   "part": "rdf1",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n:Area2 :areaHa 120.75 ;\n    :visitors 5000 ;\n    :isProtected true ;\n    :established \"1991-04-02\"^^xsd:date ;\n    :code \"042\" .\n",
+   "taskOriginal": "Describe <code>:Area2</code>: <code>:areaHa</code> 120.75 (decimal), <code>:visitors</code> 5000 (integer), <code>:isProtected</code> true (boolean), <code>:established</code> — the date 1991-04-02 (<code>xsd:date</code>), <code>:code</code> — the string <code>\"042\"</code>.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Area2 :areaHa ?a FILTER (datatype(?a) = xsd:decimal && ?a = 120.75) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Area2 :visitors ?v FILTER (datatype(?v) = xsd:integer && ?v = 5000) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Area2 :isProtected ?b FILTER (datatype(?b) = xsd:boolean && ?b) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Area2 :established ?d FILTER (datatype(?d) = xsd:date && ?d = \"1991-04-02\"^^xsd:date) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Area2 :code \"042\" }"
+    }
+   ],
+   "hints": 1,
+   "origins": [
+    [
+     "xsd:date",
+     "XML Schema datatypes"
+    ]
+   ]
+  },
+  {
+   "id": 69,
+   "tab": "rdf",
+   "part": "rdf2",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n:Viewpoint a rdfs:Class ;\n    rdfs:subClassOf :Spot ;\n    rdfs:label \"Rozhledna\"@cs , \"Viewpoint\"@en .\n:altitude a rdf:Property ;\n    rdfs:domain :Viewpoint ;\n    rdfs:range xsd:integer .\n:V1 :altitude 800 .\n",
+   "taskOriginal": "Define (RDFS) the class <code>:Viewpoint</code> — a subclass of <code>:Spot</code> (labels cs \"Rozhledna\", en \"Viewpoint\"), the property <code>:altitude</code> (<code>rdf:Property</code>, domain <code>:Viewpoint</code>, range <code>xsd:integer</code>) and the bare fact <code>:V1 :altitude 800 .</code> (no type). With RDFS inference <code>:V1</code> must become a <code>:Spot</code>. You need the <code>rdf:</code> prefix.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Viewpoint rdfs:subClassOf :Spot ; rdfs:label \"Rozhledna\"@cs , \"Viewpoint\"@en }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :altitude rdfs:domain :Viewpoint ; rdfs:range xsd:integer }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :V1 a :Spot }",
+     "base": true,
+     "infer": "rdfs"
+    }
+   ],
+   "hints": 2,
+   "origins": [
+    [
+     "rdf:Property",
+     "RDF"
+    ],
+    [
+     "xsd:integer",
+     "XML Schema datatypes"
+    ]
+   ]
+  },
+  {
+   "id": 70,
+   "tab": "rdf",
+   "part": "rdf2",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix sg:   <https://example.org/gear/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\n",
+   "ref": "@prefix sg:   <https://example.org/gear/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n\nsg:schema a skos:ConceptScheme ;\n    skos:hasTopConcept sg:Gear .\nsg:Gear a skos:Concept ;\n    skos:inScheme sg:schema ;\n    skos:prefLabel \"Vybavení\"@cs , \"Gear\"@en .\nsg:SleepingBag a skos:Concept ;\n    skos:inScheme sg:schema ;\n    skos:broader sg:Gear ;\n    skos:prefLabel \"Spacák\"@cs , \"Sleeping bag\"@en ;\n    skos:notation \"BAG\" ;\n    skos:definition \"Vak na spaní.\"@cs .\nsg:Mat a skos:Concept ;\n    skos:inScheme sg:schema ;\n    skos:broader sg:Gear ;\n    skos:prefLabel \"Karimatka\"@cs , \"Sleeping mat\"@en ;\n    skos:notation \"MAT\" ;\n    skos:altLabel \"Podložka\"@cs .\n",
+   "taskOriginal": "Create a SKOS vocabulary: the scheme <code>sg:schema</code> with the top concept <code>sg:Gear</code> (\"Vybavení\"@cs / \"Gear\"@en) and the narrower concepts <code>sg:SleepingBag</code> (\"Spacák\"@cs / \"Sleeping bag\"@en, <code>notation</code> \"BAG\", any <code>definition</code>) and <code>sg:Mat</code> (\"Karimatka\"@cs / \"Sleeping mat\"@en, <code>notation</code> \"MAT\", <code>altLabel</code> \"Podložka\"@cs). The narrower ones: <code>broader sg:Gear</code> and <code>inScheme</code>. Prefix <code>sg:</code> = <code>https://example.org/gear/</code>.",
+   "checks": [
+    {
+     "q": "PREFIX sg: <https://example.org/gear/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { sg:schema a skos:ConceptScheme ; skos:hasTopConcept sg:Gear . sg:Gear a skos:Concept }"
+    },
+    {
+     "q": "PREFIX sg: <https://example.org/gear/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { sg:SleepingBag skos:prefLabel \"Spacák\"@cs , \"Sleeping bag\"@en ; skos:notation \"BAG\" ; skos:definition ?d ; skos:broader sg:Gear ; skos:inScheme sg:schema }"
+    },
+    {
+     "q": "PREFIX sg: <https://example.org/gear/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { sg:Mat skos:prefLabel \"Karimatka\"@cs , \"Sleeping mat\"@en ; skos:notation \"MAT\" ; skos:altLabel \"Podložka\"@cs ; skos:broader sg:Gear ; skos:inScheme sg:schema }"
+    }
+   ],
+   "hints": 1
+  },
+  {
+   "id": 71,
+   "tab": "rdf",
+   "part": "rdf3",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "# no prefixes\n",
+   "ref": "<https://example.org/bivak#SpotZ> <http://www.w3.org/2000/01/rdf-schema#label> \"Zahrada\"@cs .\n",
+   "taskOriginal": "Write a triple <b>without any prefix</b>, with full IRIs in <code>&lt;…&gt;</code> only: <code>https://example.org/bivak#SpotZ</code> has the label (<code>http://www.w3.org/2000/01/rdf-schema#label</code>) <code>\"Zahrada\"@cs</code>.",
+   "checks": [
+    {
+     "q": "ASK { <https://example.org/bivak#SpotZ> <http://www.w3.org/2000/01/rdf-schema#label> \"Zahrada\"@cs }"
+    }
+   ],
+   "hints": 1
+  },
+  {
+   "id": 72,
+   "tab": "rdf",
+   "part": "rdf3",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "# declare the prefixes yourself\n",
+   "ref": "@prefix bv:   <https://example.org/bivak#> .\n@prefix kat:  <https://example.org/bivak/kategorie/> .\n@prefix iucn: <https://example.org/bivak/iucn/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n\nbv:MZCHU_110 rdfs:label \"Hojná voda\"@cs ;\n    bv:aopkCode \"110\" ;\n    bv:areaHa 9.1887 ;\n    bv:category kat:NPP ;\n    bv:iucnCategory iucn:IV ;\n    bv:geometryChanged \"2005-01-20\"^^xsd:date ;\n    bv:hasOverlap false .\n",
+   "taskOriginal": "Turn a CSV row into Turtle (as RDFization does): <code>KOD=110, KAT=NPP, NAZEV=Hojná voda, ROZL=9.1887, IUCN=IV, ZMENA_G=2005-01-20, PREKRYV=0</code>. Subject <code>bv:MZCHU_110</code> (prefix <code>bv:</code> = <code>https://example.org/bivak#</code>). Properties: <code>rdfs:label</code> (cs), <code>bv:aopkCode</code> — string, <code>bv:areaHa</code> — decimal, <code>bv:category</code> = <code>kat:NPP</code>, <code>bv:iucnCategory</code> = <code>iucn:IV</code>, <code>bv:geometryChanged</code> — date, <code>bv:hasOverlap</code> — false. Prefixes <code>kat:</code> = <code>https://example.org/bivak/kategorie/</code>, <code>iucn:</code> = <code>https://example.org/bivak/iucn/</code>. Declare all prefixes you need yourself.",
+   "checks": [
+    {
+     "q": "ASK { <https://example.org/bivak#MZCHU_110> <http://www.w3.org/2000/01/rdf-schema#label> \"Hojná voda\"@cs }"
+    },
+    {
+     "q": "ASK { <https://example.org/bivak#MZCHU_110> <https://example.org/bivak#aopkCode> \"110\" }"
+    },
+    {
+     "q": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> ASK { <https://example.org/bivak#MZCHU_110> <https://example.org/bivak#areaHa> ?a FILTER (datatype(?a) = xsd:decimal && ?a = 9.1887) }"
+    },
+    {
+     "q": "ASK { <https://example.org/bivak#MZCHU_110> <https://example.org/bivak#category> <https://example.org/bivak/kategorie/NPP> ; <https://example.org/bivak#iucnCategory> <https://example.org/bivak/iucn/IV> }"
+    },
+    {
+     "q": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> ASK { <https://example.org/bivak#MZCHU_110> <https://example.org/bivak#geometryChanged> ?d FILTER (datatype(?d) = xsd:date && ?d = \"2005-01-20\"^^xsd:date) }"
+    },
+    {
+     "q": "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> ASK { <https://example.org/bivak#MZCHU_110> <https://example.org/bivak#hasOverlap> ?b FILTER (datatype(?b) = xsd:boolean && !?b) }"
+    }
+   ],
+   "hints": 2,
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 73,
+   "tab": "rdf",
+   "part": "rdf3",
+   "kind": "turtle",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix : <https://example.org/bivak#> .\n\n:Stay10 rdfs:label \"Test\"@cs ;\n    :atSpot :SpotA ;\n    :usesShelter [ a :Tent ;\n    :includesActivity [ a :Sleeping ] ;\n",
+   "ref": "@prefix :     <https://example.org/bivak#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n:Stay10 rdfs:label \"Test\"@cs ;\n    :atSpot :SpotA ;\n    :usesShelter [ a :Tent ] ;\n    :includesActivity [ a :Sleeping ] .\n",
+   "taskOriginal": "The starter has 3 bugs (an undeclared prefix, a stray \";\" instead of a full stop, an unclosed bracket). Fix the text so it parses and describes <code>:Stay10</code>: label <code>\"Test\"@cs</code>, <code>:atSpot :SpotA</code>, a <code>:Tent</code> shelter (blank node), a <code>:Sleeping</code> activity (blank node). The check shows the line number of an error.",
+   "checks": [
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay10 rdfs:label \"Test\"@cs ; :atSpot :SpotA }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay10 :usesShelter ?s . ?s a :Tent FILTER isBlank(?s) }"
+    },
+    {
+     "q": "PREFIX : <https://example.org/bivak#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { :Stay10 :includesActivity ?a . ?a a :Sleeping }"
+    }
+   ],
+   "ns": {
+    "": "https://example.org/bivak#"
+   },
+   "hints": 2,
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 74,
+   "tab": "rdf",
+   "part": "rdf4",
+   "kind": "rml",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n",
+   "ref": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n:Sample a rml:TriplesMap ;\n    rml:logicalSource [\n        rml:source \"mzchu-sample.csv\" ;\n        rml:referenceFormulation rml:CSV ] ;\n    rml:subjectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}\" ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:aopkCode ;\n        rml:objectMap [ rml:reference \"KOD\" ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:iucnCategory ;\n        rml:objectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak/iucn/{IUCN}\" ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate rdfs:label ;\n        rml:objectMap [ rml:reference \"NAZEV\" ; rml:language \"cs\" ] ] .\n",
+   "taskOriginal": "For <code>mzchu-sample.csv</code> write an RML mapping (from scratch): subject <code>https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}</code>; <code>bv:aopkCode</code> from column KOD (string); <code>bv:iucnCategory</code> as the IRI <code>https://kbss.fel.cvut.cz/bivak/iucn/{IUCN}</code>; <code>rdfs:label</code> from NAZEV in language <code>cs</code>. <code>bv:</code> = <code>https://kbss.fel.cvut.cz/bivak#</code>. 12 triples.",
+   "hints": 2,
+   "origins": [
+    [
+     "rdfs:label",
+     "RDF Schema"
+    ]
+   ]
+  },
+  {
+   "id": 75,
+   "tab": "rdf",
+   "part": "rdf4",
+   "kind": "rml",
+   "data": [
+    "bivak"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n",
+   "ref": "@prefix rml:  <http://w3id.org/rml/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n@prefix bv:   <https://kbss.fel.cvut.cz/bivak#> .\n@prefix :     <https://kbss.fel.cvut.cz/bivak/mapping#> .\n\n:Sample a rml:TriplesMap ;\n    rml:logicalSource [\n        rml:source \"mzchu-sample.csv\" ;\n        rml:referenceFormulation rml:CSV ] ;\n    rml:subjectMap [\n        rml:template \"https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}\" ;\n        rml:class bv:NationalNatureMonument ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:areaHa ;\n        rml:objectMap [ rml:reference \"ROZL\" ; rml:datatype xsd:decimal ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:hasOverlap ;\n        rml:objectMap [ rml:reference \"PREKRYV\" ; rml:datatype xsd:boolean ] ] ;\n    rml:predicateObjectMap [\n        rml:predicate bv:category ;\n        rml:objectMap [ rml:template \"https://kbss.fel.cvut.cz/bivak/kategorie/{KAT}\" ] ] .\n",
+   "taskOriginal": "For <code>mzchu-sample.csv</code> write a mapping: subject <code>https://kbss.fel.cvut.cz/bivak#MZCHU_{KOD}</code> with the class <code>bv:NationalNatureMonument</code> (<code>rml:class</code>); <code>bv:areaHa</code> from ROZL (<code>xsd:decimal</code>); <code>bv:hasOverlap</code> from PREKRYV (<code>xsd:boolean</code>); <code>bv:category</code> as the IRI <code>https://kbss.fel.cvut.cz/bivak/kategorie/{KAT}</code>. 16 triples.",
+   "hints": 2,
+   "origins": [
+    [
+     "rml:class",
+     "RML"
+    ],
+    [
+     "xsd:decimal",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:boolean",
+     "XML Schema datatypes"
+    ]
+   ]
+  },
+  {
+   "id": 76,
+   "tab": "test2",
+   "part": "test21",
+   "kind": "sparql",
+   "data": [
+    "four"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/>\nPREFIX uiaa: <https://www.theuiaa.org/4000-alps/summit/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\n",
+   "ref": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/>\n\nSELECT ?name ?range ?higherName ?higherRange\nWHERE {\n  ?summit uiaa-s:isolatedTo ?higher ;\n          uiaa-s:peakName ?name ;\n          uiaa-s:inRange ?range .\n  ?higher uiaa-s:peakName ?higherName ;\n          uiaa-s:inRange ?higherRange .\n  FILTER (?range != ?higherRange)\n}\nORDER BY ?name\n",
+   "taskOriginal": "The property <code>uiaa-s:isolatedTo</code> points to the nearest higher summit. Return all summits whose nearest higher summit lies <b>in a different range</b>. For each, output its name, its range, and the name and range of the nearest higher summit. Columns: <code>?name</code>, <code>?range</code>, <code>?higherName</code>, <code>?higherRange</code>. <div class=\"small\">Data: <code>four-thousanders.ttl</code> (82 summits). Prefixes: <code>uiaa-s: &lt;https://www.theuiaa.org/4000-alps/schema/&gt;</code>, <code>uiaa: &lt;https://www.theuiaa.org/4000-alps/summit/&gt;</code>. Ranges (<code>uiaa-s:inRange</code>) are bare IRIs with no names; output the IRI itself.</div>",
+   "hints": 2
+  },
+  {
+   "id": 77,
+   "tab": "test2",
+   "part": "test21",
+   "kind": "sparql",
+   "data": [
+    "four"
+   ],
+   "infer": "none",
+   "ordered": true,
+   "exam": false,
+   "starter": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/>\nPREFIX uiaa: <https://www.theuiaa.org/4000-alps/summit/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\n",
+   "ref": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/>\nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\nSELECT ?name ?prominence (SUM(IF(CONTAINS(STR(?country), \" and \"), 2, 1)) AS ?countryCount)\nWHERE {\n  ?summit uiaa-s:peakName ?name ;\n          uiaa-s:prominence ?promStr ;\n          uiaa-s:country ?country .\n  BIND (xsd:integer(STR(?promStr)) AS ?prominence)\n  FILTER (?prominence > 300)\n}\nGROUP BY ?summit ?name ?prominence\nHAVING (SUM(IF(CONTAINS(STR(?country), \" and \"), 2, 1)) > 1)\nORDER BY DESC(?prominence)\n",
+   "taskOriginal": "Return the names of all border summits (lying in more than one country) with prominence over 300 m, most prominent first. Also output the prominence and the number of countries. Columns: <code>?name</code>, <code>?prominence</code>, <code>?countryCount</code>. <i>Prominence is stored as a string.</i> Catch: for Dufourspitze the country is a single value <code>\"Switzerland and Italy\"</code>. <div class=\"small\">Data: <code>four-thousanders.ttl</code> (82 summits). Prefixes: <code>uiaa-s: &lt;https://www.theuiaa.org/4000-alps/schema/&gt;</code>, <code>uiaa: &lt;https://www.theuiaa.org/4000-alps/summit/&gt;</code>. Ranges (<code>uiaa-s:inRange</code>) are bare IRIs with no names; output the IRI itself.</div>",
+   "hints": 2
+  },
+  {
+   "id": 78,
+   "tab": "test2",
+   "part": "test21",
+   "kind": "turtle",
+   "data": [
+    "four"
+   ],
+   "infer": "none",
+   "ordered": false,
+   "exam": false,
+   "starter": "@prefix uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n########### SCHEMA #####################################\n## Conceptual scheme for 4000 meters peaks\n<https://www.theuiaa.org/4000-alps/schema/four-thousanders> a skos:ConceptScheme .\n\n\n########### CLASSES ####################################\n## Summit\nuiaa-s:summit a skos:Concept, rdfs:Class ;\n    skos:inScheme uiaa-s:four-thousanders ;\n    skos:definition \"A summit is a point on a surface that is higher in elevation than all points immediately adjacent to it. Rules of UIAA recognize peaks with prominence higher than 30 meters or some significance in history of climbing.\";\n    skos:prefLabel \"Summit\" ;\n    skos:altLabel \"Peak\" .\n\n## Range\nuiaa-s:range a skos:Concept, rdfs:Class ;\n    skos:inScheme uiaa-s:four-thousanders ;\n    skos:definition \"A range. In this context apparently part of alps.\";\n    skos:example \"Wallis Alps\";\n    skos:prefLabel \"Range\" .\n\n########### PROPERTIES #################################\n## Isolated to\nuiaa-s:isolatedTo a skos:Concept, rdf:Property ;\n    skos:prefLabel \"isolated to\" ;\n    skos:definition \"This property refers to the nearest higher summit to this one.\" ;\n    skos:inScheme uiaa-s:four-thousanders;\n    rdfs:domain uiaa-s:summit ;\n    rdfs:range uiaa-s:summit .\n\n## In range\nuiaa-s:inRange a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"This property refers to the range in which the summit is situated\" ;\n\tskos:prefLabel \"is in range\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range uiaa-s:range .\n\n## Elevation\nuiaa-s:elevation a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"Elevation of the summit is a height difference in meters between the summit and the sea level.\" ;\n\tskos:prefLabel \"has elevation\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:integer .\n\nuiaa-s:firstAscentYear a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"A date or just a year of the first successful ascent on the mounatin.\" ;\n\tskos:prefLabel \"date of the first ascent\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:date .\n\nuiaa-s:country a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"Name of the country in which summit lies.\" ;\n\tskos:comment \"For border summits, this property has more values.\" ;\n\tskos:prefLabel \"country\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:string .\n\nuiaa-s:prominence a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"The prominence of a peak is the least drop in height in meters necessary in order to get from the summit to any higher terrain.\" ;\n\tskos:comment \"An alternative equivalent definition is that the prominence is the height of the peak's summit above the lowest contour line encircling it, but containing no higher summit within it.\" ;\n\tskos:comment \"Units of measure for prominence is meter.\" ;\n\tskos:prefLabel \"prominence\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:float .\n\nuiaa-s:isolation  a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"The topographic isolation of a summit is the minimum distance to a point of equal elevation, representing a radius of dominance in which the peak is the highest point.\" ;\n\tskos:comment \"The highest summit on Earth - Mount Everest - has indefinite isolation.\" ;\n\tskos:comment \"Isolation is recorded in kilometers.\" ;\n\tskos:prefLabel \"isolation\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:float .\n\nuiaa-s:firstClimber a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"The first person that has climbed to the summit.\" ;\n\tskos:comment \"Usually there was a group of more climbers.\" ;\n\tskos:comment \"Sometimes the names are unknown.\" ;\n\tskos:prefLabel \"first climber on summit\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:string .\n\nuiaa-s:highestSaddleToReachHigherSummit a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"A col in geomorphology is the lowest point on a mountain ridge between two peaks.\" ;\n\tskos:comment \"This is relevant to prominence. It is the highest place on the edge of circle with radius equal to prominence and center on the summit.\" ;\n\tskos:comment \"Due to the origin data, this is just a string. It would be much more useful if this was an object.\" ;\n\tskos:prefLabel \"highest saddle\" ;\n\tskos:altLabel \"col\", \"gap\", \"pass\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:string .\n\nuiaa-s:peakName  a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"Name of the summit in local language.\" ;\n\tskos:comment \"Name often contains specification of the specific summit on the range, e.g. western summit, etc...\" ;\n\tskos:prefLabel \"summit name\" ;\n\trdfs:subPropertyOf skos:prefLabel ;\n\trdfs:domain uiaa-s:summit .\n\n",
+   "ref": "@prefix uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> .\n@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\n########### SCHEMA #####################################\n## Conceptual scheme for 4000 meters peaks\n<https://www.theuiaa.org/4000-alps/schema/four-thousanders> a skos:ConceptScheme .\n\n\n########### CLASSES ####################################\n## Summit\nuiaa-s:summit a skos:Concept, rdfs:Class ;\n    skos:inScheme uiaa-s:four-thousanders ;\n    skos:definition \"A summit is a point on a surface that is higher in elevation than all points immediately adjacent to it. Rules of UIAA recognize peaks with prominence higher than 30 meters or some significance in history of climbing.\";\n    skos:prefLabel \"Summit\" ;\n    skos:altLabel \"Peak\" .\n\n## Range\nuiaa-s:range a skos:Concept, rdfs:Class ;\n    skos:inScheme uiaa-s:four-thousanders ;\n    skos:definition \"A range. In this context apparently part of alps.\";\n    skos:example \"Wallis Alps\";\n    skos:prefLabel \"Range\" .\n\n########### PROPERTIES #################################\n## Isolated to\nuiaa-s:isolatedTo a skos:Concept, rdf:Property ;\n    skos:prefLabel \"isolated to\" ;\n    skos:definition \"This property refers to the nearest higher summit to this one.\" ;\n    skos:inScheme uiaa-s:four-thousanders;\n    rdfs:domain uiaa-s:summit ;\n    rdfs:range uiaa-s:summit .\n\n## In range\nuiaa-s:inRange a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"This property refers to the range in which the summit is situated\" ;\n\tskos:prefLabel \"is in range\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range uiaa-s:range .\n\n## Elevation\nuiaa-s:elevation a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"Elevation of the summit is a height difference in meters between the summit and the sea level.\" ;\n\tskos:prefLabel \"has elevation\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:integer .\n\nuiaa-s:firstAscentYear a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"A date or just a year of the first successful ascent on the mounatin.\" ;\n\tskos:prefLabel \"date of the first ascent\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:date .\n\nuiaa-s:country a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"Name of the country in which summit lies.\" ;\n\tskos:comment \"For border summits, this property has more values.\" ;\n\tskos:prefLabel \"country\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:string .\n\nuiaa-s:prominence a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"The prominence of a peak is the least drop in height in meters necessary in order to get from the summit to any higher terrain.\" ;\n\tskos:comment \"An alternative equivalent definition is that the prominence is the height of the peak's summit above the lowest contour line encircling it, but containing no higher summit within it.\" ;\n\tskos:comment \"Units of measure for prominence is meter.\" ;\n\tskos:prefLabel \"prominence\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:float .\n\nuiaa-s:isolation  a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"The topographic isolation of a summit is the minimum distance to a point of equal elevation, representing a radius of dominance in which the peak is the highest point.\" ;\n\tskos:comment \"The highest summit on Earth - Mount Everest - has indefinite isolation.\" ;\n\tskos:comment \"Isolation is recorded in kilometers.\" ;\n\tskos:prefLabel \"isolation\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:float .\n\nuiaa-s:firstClimber a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"The first person that has climbed to the summit.\" ;\n\tskos:comment \"Usually there was a group of more climbers.\" ;\n\tskos:comment \"Sometimes the names are unknown.\" ;\n\tskos:prefLabel \"first climber on summit\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:string .\n\nuiaa-s:highestSaddleToReachHigherSummit a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"A col in geomorphology is the lowest point on a mountain ridge between two peaks.\" ;\n\tskos:comment \"This is relevant to prominence. It is the highest place on the edge of circle with radius equal to prominence and center on the summit.\" ;\n\tskos:comment \"Due to the origin data, this is just a string. It would be much more useful if this was an object.\" ;\n\tskos:prefLabel \"highest saddle\" ;\n\tskos:altLabel \"col\", \"gap\", \"pass\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range xsd:string .\n\nuiaa-s:peakName  a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"Name of the summit in local language.\" ;\n\tskos:comment \"Name often contains specification of the specific summit on the range, e.g. western summit, etc...\" ;\n\tskos:prefLabel \"summit name\" ;\n\trdfs:subPropertyOf skos:prefLabel ;\n\trdfs:domain uiaa-s:summit .\n\n\nuiaa-s:route a skos:Concept, rdfs:Class ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"A route is a way leading to a summit. In this context it is the easiest (normal) ascent route of a summit.\" ;\n\tskos:example \"Goûter Route\" ;\n\tskos:prefLabel \"Route\" .\n\nuiaa-s:routeName a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"Name of the route, e.g. Goûter Route.\" ;\n\tskos:prefLabel \"route name\" ;\n\trdfs:domain uiaa-s:route ;\n\trdfs:range xsd:string .\n\nuiaa-s:difficultyGrade a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"Difficulty grade of the route according to the French adjectival alpine grading system (F, PD, AD, D, TD, ED).\" ;\n\tskos:prefLabel \"difficulty grade\" ;\n\trdfs:domain uiaa-s:route ;\n\trdfs:range skos:Concept .\n\nuiaa-s:normalRoute a skos:Concept, rdf:Property ;\n\tskos:inScheme uiaa-s:four-thousanders ;\n\tskos:definition \"This property refers to the easiest (normal) route that connects the summit with its normal ascent path.\" ;\n\tskos:prefLabel \"normal route\" ;\n\trdfs:domain uiaa-s:summit ;\n\trdfs:range uiaa-s:route .\n\n\nuiaa-s:difficulty-grades a skos:ConceptScheme ;\n\tskos:prefLabel \"Alpine difficulty grades\"@en , \"Échelle de difficulté alpine\"@fr ;\n\tskos:definition \"French adjectival system for grading the overall difficulty of alpine routes.\"@en .\n\nuiaa-s:grade-F a skos:Concept ;\n\tskos:inScheme uiaa-s:difficulty-grades ;\n\tskos:notation \"F\" ;\n\tskos:prefLabel \"facile\"@fr ;\n\tskos:definition \"Easy. Simple route, mostly walking, little technical difficulty.\"@en .\n\nuiaa-s:grade-PD a skos:Concept ;\n\tskos:inScheme uiaa-s:difficulty-grades ;\n\tskos:notation \"PD\" ;\n\tskos:prefLabel \"peu difficile\"@fr ;\n\tskos:definition \"Slightly difficult.\"@en .\n\nuiaa-s:grade-PD-minus a skos:Concept ;\n\tskos:inScheme uiaa-s:difficulty-grades ;\n\tskos:notation \"PD-\" ;\n\tskos:prefLabel \"peu difficile moins\"@fr ;\n\tskos:broader uiaa-s:grade-PD ;\n\tskos:definition \"Lower end of the PD grade.\"@en .\n\nuiaa-s:grade-PD-plus a skos:Concept ;\n\tskos:inScheme uiaa-s:difficulty-grades ;\n\tskos:notation \"PD+\" ;\n\tskos:prefLabel \"peu difficile plus\"@fr ;\n\tskos:broader uiaa-s:grade-PD ;\n\tskos:definition \"Upper end of the PD grade.\"@en .\n\nuiaa-s:grade-PD skos:narrower uiaa-s:grade-PD-minus , uiaa-s:grade-PD-plus .\n\nuiaa-s:grade-AD a skos:Concept ;\n\tskos:inScheme uiaa-s:difficulty-grades ;\n\tskos:notation \"AD\" ;\n\tskos:prefLabel \"assez difficile\"@fr ;\n\tskos:definition \"Fairly difficult.\"@en .\n\nuiaa-s:grade-D a skos:Concept ;\n\tskos:inScheme uiaa-s:difficulty-grades ;\n\tskos:notation \"D\" ;\n\tskos:prefLabel \"difficile\"@fr ;\n\tskos:definition \"Difficult.\"@en .\n\nuiaa-s:grade-TD a skos:Concept ;\n\tskos:inScheme uiaa-s:difficulty-grades ;\n\tskos:notation \"TD\" ;\n\tskos:prefLabel \"très difficile\"@fr ;\n\tskos:definition \"Very difficult.\"@en .\n\nuiaa-s:grade-ED a skos:Concept ;\n\tskos:inScheme uiaa-s:difficulty-grades ;\n\tskos:notation \"ED\" ;\n\tskos:prefLabel \"extrêmement difficile\"@fr ;\n\tskos:definition \"Extremely difficult.\"@en .\n",
+   "taskOriginal": "Open the schema (the editor already holds <code>four-thousanders-schema.ttl</code>) and extend it. <b>a)</b> A class <i>route</i> with the properties <i>route name</i> and <i>difficulty grade</i>, plus a property linking a summit to its normal route. Document every new class and property with SKOS like the rest: <code>skos:inScheme</code>, <code>skos:prefLabel</code>, <code>skos:definition</code>, <code>rdfs:domain</code>, <code>rdfs:range</code>. <b>b)</b> A separate SKOS concept scheme with the grades F, PD, AD, D, TD, ED: each with a <code>skos:notation</code> and a French <code>prefLabel</code> (facile, peu difficile, assez difficile, difficile, très difficile, extrêmement difficile). PD- and PD+ are narrower (<code>skos:narrower</code>) than PD. The difficulty-grade property from a) points to these concepts (domain: route). <div class=\"small\">Choose the IRI names yourself (the <code>uiaa-s:</code> prefix is already declared).</div>",
+   "checks": [
+    {
+     "q": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?r a rdfs:Class ; skos:inScheme ?s ; skos:prefLabel ?l ; skos:definition ?d FILTER (?r NOT IN (uiaa-s:summit, uiaa-s:range)) }"
+    },
+    {
+     "q": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?r a rdfs:Class FILTER (?r NOT IN (uiaa-s:summit, uiaa-s:range)) ?p rdfs:domain ?r ; rdfs:range xsd:string ; skos:inScheme ?s ; skos:prefLabel ?l ; skos:definition ?d }"
+    },
+    {
+     "q": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?r a rdfs:Class FILTER (?r NOT IN (uiaa-s:summit, uiaa-s:range)) ?p rdfs:domain ?r ; rdfs:range ?g ; skos:inScheme ?s ; skos:prefLabel ?l ; skos:definition ?d FILTER (?g != xsd:string) }"
+    },
+    {
+     "q": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?r a rdfs:Class FILTER (?r NOT IN (uiaa-s:summit, uiaa-s:range)) ?p rdfs:domain uiaa-s:summit ; rdfs:range ?r ; skos:inScheme ?s ; skos:prefLabel ?l ; skos:definition ?d }"
+    },
+    {
+     "q": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { { SELECT (COUNT(DISTINCT ?n) AS ?k) WHERE { ?c a skos:Concept ; skos:notation ?n ; skos:inScheme ?s ; skos:prefLabel ?l FILTER (lang(?l) = 'fr' && STR(?n) IN ('F','PD','AD','D','TD','ED')) } } FILTER (?k = 6) }"
+    },
+    {
+     "q": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { { SELECT (COUNT(DISTINCT ?l) AS ?k) WHERE { ?c a skos:Concept ; skos:prefLabel ?l FILTER (lang(?l) = 'fr' && STR(?l) IN ('facile','peu difficile','assez difficile','difficile','très difficile','extrêmement difficile')) } } FILTER (?k = 6) }"
+    },
+    {
+     "q": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?pd skos:notation 'PD' ; skos:narrower ?a , ?b . ?a skos:notation 'PD-' . ?b skos:notation 'PD+' }"
+    },
+    {
+     "q": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?pd skos:notation 'PD' ; skos:inScheme ?s . ?s a skos:ConceptScheme FILTER (?s != <https://www.theuiaa.org/4000-alps/schema/four-thousanders>) }"
+    },
+    {
+     "q": "PREFIX uiaa-s: <https://www.theuiaa.org/4000-alps/schema/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> ASK { ?p rdfs:range ?g ; rdfs:domain ?r . ?r a rdfs:Class FILTER (?r NOT IN (uiaa-s:summit, uiaa-s:range)) FILTER (?g = skos:Concept || EXISTS { ?x skos:inScheme ?g }) }"
+    }
+   ],
+   "ns": {
+    "uiaa-s": "https://www.theuiaa.org/4000-alps/schema/"
+   },
+   "hints": 2,
+   "origins": [
+    [
+     "skos:inScheme",
+     "SKOS"
+    ],
+    [
+     "skos:prefLabel",
+     "SKOS"
+    ],
+    [
+     "skos:definition",
+     "SKOS"
+    ],
+    [
+     "rdfs:domain",
+     "RDF Schema"
+    ],
+    [
+     "rdfs:range",
+     "RDF Schema"
+    ],
+    [
+     "skos:notation",
+     "SKOS"
+    ],
+    [
+     "skos:narrower",
+     "SKOS"
+    ],
+    [
+     "skos:ConceptScheme",
+     "SKOS"
+    ],
+    [
+     "skos:Concept",
+     "SKOS"
+    ],
+    [
+     "rdfs:Class",
+     "RDF Schema"
+    ],
+    [
+     "skos:altLabel",
+     "SKOS"
+    ],
+    [
+     "skos:example",
+     "SKOS"
+    ],
+    [
+     "rdf:Property",
+     "RDF"
+    ],
+    [
+     "xsd:integer",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:date",
+     "XML Schema datatypes"
+    ],
+    [
+     "skos:comment",
+     "SKOS"
+    ],
+    [
+     "xsd:string",
+     "XML Schema datatypes"
+    ],
+    [
+     "xsd:float",
+     "XML Schema datatypes"
+    ],
+    [
+     "rdfs:subPropertyOf",
+     "RDF Schema"
+    ]
+   ]
+  }
+ ]
+}
